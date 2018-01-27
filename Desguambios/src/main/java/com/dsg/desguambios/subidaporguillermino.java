@@ -9,18 +9,6 @@ public class subidaporguillermino {
 		System.out.print("hola");
 	}
 	
-	//cambio de las 11:24
-	// cambio de las 11:25
-	//cambio de las 11:37
-	
-	
-	//cambio para probar otra vez
-	
-
-	//cambio sergio 11:43
-
-	
-	//cambio otro para probar conflictos
 
 
 }
