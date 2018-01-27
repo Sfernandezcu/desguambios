@@ -16,11 +16,11 @@ public class subidaporguillermino {
 	
 	//cambio para probar otra vez
 	
-<<<<<<< HEAD
+
 	//cambio sergio 11:43
-=======
+
 	
 	//cambio otro para probar conflictos
->>>>>>> branch 'master' of https://github.com/di3guez/desguambios.git
+
 
 }
