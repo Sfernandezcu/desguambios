@@ -5,10 +5,10 @@ Practica De Desarrollo de aplicaciones distribuidas
 El equipo de trabajo lo componen: 
 - Sergio Fernández Cuadrado: 
     - MAIL: s.fernandezcu@alumnos.urjc.es.
-    - GITHUB: di3guez     
+    - GITHUB: Sfernandezcu     
 - Daniel Bruña Diéguez: 
      - MAIL: d.bruna@alumnos.urjc.es.
-     - GITHUB: Sfernandezcu
+     - GITHUB: di3guez
 - Guillermo Muñoz Sanz: 
      - MAIL: g.munozs@alumnos.urjc.es.
      - GITHUB: Guilleermo10
