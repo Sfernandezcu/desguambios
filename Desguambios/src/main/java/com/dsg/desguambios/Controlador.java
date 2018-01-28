@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class Controlador {
 
 	@Autowired
-	 private UsersService usersService;
+	 private UserService usersService;
 	
 	 @RequestMapping("/nombre_url")
 	 public String greeting(Model model) {
