@@ -10,8 +10,4 @@ public class DesguambiosApplication {
 		SpringApplication.run(DesguambiosApplication.class, args);
 	}
 	
-	//prueba para guillermino
-	//prueba para sergio
-	//prueba2 para guillermino
- 
 }
