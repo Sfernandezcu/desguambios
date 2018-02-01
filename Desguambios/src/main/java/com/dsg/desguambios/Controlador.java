@@ -3,7 +3,11 @@ package com.dsg.desguambios;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+
 import org.springframework.web.bind.annotation.PostMapping;
+
+import org.springframework.web.bind.annotation.GetMapping;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -40,8 +44,7 @@ public class Controlador {
 	
 	 @RequestMapping("/index")
 	 public String greeting(Model model) {
-	 model.addAttribute("name",
-	 usersService.getNumUsers()+" users");
+	 model.addAttribute("name",usersService.getNumUsers()+" users");
 
 	 return "index";
 	 }
