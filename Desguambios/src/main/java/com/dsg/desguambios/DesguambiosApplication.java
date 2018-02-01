@@ -9,7 +9,7 @@ public class DesguambiosApplication {
 	
 	@Bean
 	public UserService usersService() {
-		return new UserService(10);
+		return new UserService(8);
 	}
 
 	public static void main(String[] args) {

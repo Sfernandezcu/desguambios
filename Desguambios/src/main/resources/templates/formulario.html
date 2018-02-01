@@ -14,8 +14,12 @@
 		<input type='text' name='direccion'/>
 		<p>Password:</p>
 		<input type='text' name='password'/>
+		
 		<p>Confirm Password:</p>
 		<input type='text' name='direccion'/>
+	    {{#silent}}
+     	<p>La contraseña no coincide, vuelva a introducirla</p>
+     	{{/silent}}
 
 		<input type='submit' value='Enviar'/>
 	</form>
