@@ -24,8 +24,15 @@ public class Controlador {
 		 
 		 formulario.setAll(usuario, email, direccion, password, valPassword);
 		 
-		 return "formulario";
 		 
+		 if(password.equals(valPassword)) {
+			 return "login";
+		 }else {
+			 
+			 model.addAttribute("silent",true);
+			 
+			 return "formulario";
+		 }
 		 
 		 
 		 
