@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 
@@ -17,26 +18,28 @@ public class Controlador {
 
 	@Autowired
 	 private UserService usersService;
-	 private Formulario formulario;
+	 private Registro formulario;
 	 
 	 
 	 
-	 @PostMapping("/formulario")
-	 public String registro(Model model, @RequestParam String usuario, @RequestParam String email,
+	 @RequestMapping(value = "/registro", method=RequestMethod.GET)
+	 public String registro(Model model) {
+		
+		 
+		 
+		return "registro";
+		 
+		 
+		 
+	 }
+	 
+	 @RequestMapping(value = "/registro", method=RequestMethod.POST)
+	 public String registro(@RequestParam String usuario, @RequestParam String email,
 			 @RequestParam String direccion, @RequestParam String password, @RequestParam String valPassword) {
+		
 		 
-		 
-		 formulario.setAll(usuario, email, direccion, password, valPassword);
-		 
-		 
-		 if(password.equals(valPassword)) {
-			 return "login";
-		 }else {
-			 
-			 model.addAttribute("silent",true);
-			 
-			 return "formulario";
-		 }
+		return "index";
+		
 		 
 		 
 		 
