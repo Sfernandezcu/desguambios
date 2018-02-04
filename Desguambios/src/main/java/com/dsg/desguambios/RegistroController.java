@@ -46,7 +46,7 @@ public class RegistroController {
 		
 		
 		System.out.println("++++++++++++++++++++++++"); 
-		return "registro";
+		return "prueba";
 		
 		 
 		 
