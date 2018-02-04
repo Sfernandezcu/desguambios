@@ -14,11 +14,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 
 @Controller
-public class Controlador {
+public class RegistroController {
 
 	@Autowired
 	 private UserService usersService;
-	 private Registro formulario;
 	 
 	 
 	 
@@ -33,32 +32,25 @@ public class Controlador {
 		 
 	 }
 	 
+	 
 	 @RequestMapping(value = "/registro", method=RequestMethod.POST)
-	 public String registro(@RequestParam String usuario, @RequestParam String email,
+	 public String registro(Model model,@RequestParam String usuario, @RequestParam String email,
 			 @RequestParam String direccion, @RequestParam String password, @RequestParam String valPassword) {
 		
-		 
-		return "index";
+		
+		model.addAttribute("usuario", usuario);
+		model.addAttribute("email", email);
+		model.addAttribute("direccion", direccion);
+		model.addAttribute("password", password);
+		model.addAttribute("valPassword", valPassword);
+		
+		
+		System.out.println("++++++++++++++++++++++++"); 
+		return "registro";
 		
 		 
 		 
 		 
-	 }
-	
-	 @RequestMapping("/index")
-	 public String greeting(Model model) {
-	 model.addAttribute("name",usersService.getNumUsers()+" users");
-
-	 return "index";
-	 }
-	 
-	 
-
-	
-	
-
-
-
-	 
+	 } 
 	 
 }

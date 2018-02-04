@@ -1,6 +1,6 @@
 package com.dsg.desguambios;
 
-public class Registro {
+public class Desguace {
 	
 	private String usuario;
 	private String email;
@@ -8,11 +8,11 @@ public class Registro {
 	private String password;
 	private String valPassword;
 	
-	public Registro() {
+	public Desguace() {
 		
 	}
 	
-	public Registro(String usuario, String email, String direccion, String password
+	public Desguace(String usuario, String email, String direccion, String password
 			, String valPassword) {
 		this.usuario = usuario;
 		this.email = email;
@@ -51,6 +51,13 @@ public class Registro {
 	public void setValPassword(String valPassword) {
 		this.valPassword = valPassword;
 	}
+
+	@Override
+	public String toString() {
+		return "Desguace [usuario=" + usuario + ", email=" + email + ", direccion=" + direccion + ", password="
+				+ password + ", valPassword=" + valPassword + "]";
+	}
+
 	
 
 
