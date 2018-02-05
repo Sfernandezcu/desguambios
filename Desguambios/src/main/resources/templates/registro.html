@@ -5,7 +5,7 @@
 	<meta charset="UTF-8"/>
 </head>
 <body>
-	<form action="registro" method="post">
+	<form:form method="POST" action="/registro" modelAttribute="registro">
 		<p>Usuario: </p>
 		<input type='text' name='usuario'/>
 		<p>Email:</p>
@@ -20,8 +20,9 @@
 	    {{#silent}}
      	<p>La contraseña no coincide, vuelva a introducirla</p>
      	{{/silent}}
-
+		<p>
 		<input type='submit' value='Enviar'/>
-	</form>
+		</p>
+		</form:form>
 </body>
 </html>
