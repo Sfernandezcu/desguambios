@@ -22,10 +22,6 @@ public class RegistroController {
 	 private UserService usersService;
 	 public ArrayList<Desguace> lista = new ArrayList<>();
 	 
-<<<<<<< HEAD
-	 
-=======
->>>>>>> branch 'master' of https://github.com/di3guez/desguambios.git
 	 /*
 	 @RequestMapping(value = "/registro", method=RequestMethod.GET)
 	 public String registro(Model model) {
@@ -39,21 +35,12 @@ public class RegistroController {
 	 }
 	 */
 	 
-<<<<<<< HEAD
-	 
 	 @RequestMapping(value = "/registro")
 	 public String registro(Model model,@RequestParam String alta, String usuario,String email,
 			  String direccion,  String password,  String valPassword) {
-=======
-	 */
-	 @RequestMapping(value = "/registro", method=RequestMethod.GET)
-	 public String registro(Model model,@RequestParam String usuario, @RequestParam String email,
-			 @RequestParam String direccion, @RequestParam String password, @RequestParam String valPassword) {
->>>>>>> branch 'master' of https://github.com/di3guez/desguambios.git
-		
-<<<<<<< HEAD
+
 		if(Integer.parseInt(alta)==1) {
-			lista
+			lista.add(new Desguace(usuario,email,direccion,password,valPassword));
 		}
 		/*
 		model.addAttribute("usuario", usuario);
@@ -62,16 +49,8 @@ public class RegistroController {
 		model.addAttribute("password", password);
 		model.addAttribute("valPassword", valPassword);
 		*/
-=======
-		lista.add(new Desguace(usuario,email,direccion,password,valPassword));
 		
-		model.addAttribute("usuario", lista.get(0).getUsuario());
-		model.addAttribute("email", lista.get(0).getUsuario());
-		model.addAttribute("direccion", lista.get(0).getUsuario());
-		model.addAttribute("password", lista.get(0).getUsuario());
-		model.addAttribute("valPassword", lista.get(0).getUsuario());
 		
->>>>>>> branch 'master' of https://github.com/di3guez/desguambios.git
 		
 		//System.out.println("++++++++++++++++++++++++"); 
 		return "prueba";
