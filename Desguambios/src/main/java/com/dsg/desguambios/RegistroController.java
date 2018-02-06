@@ -40,6 +40,7 @@ public class RegistroController {
 			  String direccion,  String password,  String valPassword) {
 
 		if(Integer.parseInt(alta)==1) {
+			model.addAttribute("alta",alta);
 			lista.add(new Desguace(usuario,email,direccion,password,valPassword));
 		}
 		/*
