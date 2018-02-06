@@ -40,8 +40,13 @@ public class RegistroController {
 			  String direccion,  String password,  String valPassword) {
 
 		if(Integer.parseInt(alta)==1) {
+			Desguace desguace = new Desguace(usuario,email,direccion,password,valPassword);
+			Desguace desguace1 = new Desguace("guiulle","guiulle","guiulle","guiulle","guiulle");
+
+			lista.add(desguace);
+			lista.add(desguace1);
+
 			
-			lista.add(new Desguace(usuario,email,direccion,password,valPassword));
 			
 			model.addAttribute("mensaje", true);
 			
@@ -62,6 +67,12 @@ public class RegistroController {
 		 model.addAttribute("password", lista.get(0).getPassword());
 		 model.addAttribute("email", lista.get(0).getEmail());
 		 model.addAttribute("valPassword", lista.get(0).getValPassword());
+		 
+		 model.addAttribute("usuario1", lista.get(1).getUsuario());
+		 model.addAttribute("direccion1", lista.get(1).getDireccion());
+		 model.addAttribute("password1", lista.get(1).getPassword());
+		 model.addAttribute("email1", lista.get(1).getEmail());
+		 model.addAttribute("valPassword1", lista.get(1).getValPassword());
 
 		 
 		 
