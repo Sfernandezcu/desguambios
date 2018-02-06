@@ -28,7 +28,7 @@ public class RegistroController {
 		
 		 
 		 
-		return "registro";
+		 return "registro";
 		 
 		 
 		 
