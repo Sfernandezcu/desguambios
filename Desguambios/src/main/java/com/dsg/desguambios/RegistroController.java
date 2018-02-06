@@ -40,25 +40,19 @@ public class RegistroController {
 			  String direccion,  String password,  String valPassword) {
 
 		if(Integer.parseInt(alta)==1) {
-			model.addAttribute("alta",alta);
+			
 			lista.add(new Desguace(usuario,email,direccion,password,valPassword));
+			
+			
 		}
-		/*
-		model.addAttribute("usuario", usuario);
-		model.addAttribute("email", email);
-		model.addAttribute("direccion", direccion);
-		model.addAttribute("password", password);
-		model.addAttribute("valPassword", valPassword);
-		*/
-		
-		
-		
-		//System.out.println("++++++++++++++++++++++++"); 
-		return "prueba";
-		
 		 
-		 
+		return "registro";
+			 
 		 
 	 } 
+	 
+	 
+	 
+	 
 	 
 }

@@ -5,25 +5,31 @@
 	<meta charset="UTF-8"/>
 </head>
 <body>
-	<form:form method="POST" action="/registro" modelAttribute="registro">
-		<p>Usuario: </p>
-		<input type='text' name='usuario'/>
-		<p>Email:</p>
-		<input type='text' name='email'/>
-		<p>Direccion:</p>
-		<input type='text' name='direccion'/>
-		<p>Password:</p>
-		<input type='text' name='password'/>
+
+
+
+
+
+
+
+
+	
 		
-		<p>Confirm Password:</p>
-		<input type='text' name='direccion'/>
-	    {{#silent}}
-     	<p>La contraseña no coincide, vuelva a introducirla</p>
-     	{{/silent}}
-		<p>
-		<input name="alta" type="hidden" value=1>
-		<input type='submit' value='Enviar'/>
-		</p>
-		</form:form>
+	<form action="/registro">
+	<p>Usuario:
+	<input  name="usuario" type="text" placeholder="usuario"></p>
+	<p>Correo (@gmail.com):
+	<input  name="email" type="text" placeholder="email"></p>
+	<p>Direccion:
+	<input  name="direccion" type="text" placeholder="direccion"></p>
+	<p>Password:
+	<input  name="password" type="text" placeholder="password"></p>
+	<p>Validar Password:
+	<input  name="valPassword" type="text" placeholder="valPassword"></p>
+	<input  name="alta" type="hidden" value="1">
+	<input  type="submit" value="Registrar">
+</form>
+		
+		
 </body>
 </html>
