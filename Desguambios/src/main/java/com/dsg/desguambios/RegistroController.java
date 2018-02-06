@@ -1,5 +1,7 @@
 package com.dsg.desguambios;
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,9 +20,9 @@ public class RegistroController {
 
 	@Autowired
 	 private UserService usersService;
+	 public ArrayList<Desguace> lista = new ArrayList<>();
 	 
-	 
-	 
+	 /*
 	 @RequestMapping(value = "/registro", method=RequestMethod.GET)
 	 public String registro(Model model) {
 		
@@ -31,21 +33,27 @@ public class RegistroController {
 		 
 		 
 	 }
+	 */
 	 
-	 
-	 @RequestMapping(value = "/registro", method=RequestMethod.POST)
-	 public String registro(Model model,@RequestParam String usuario, @RequestParam String email,
-			 @RequestParam String direccion, @RequestParam String password, @RequestParam String valPassword) {
-		
-		
+	 @RequestMapping(value = "/registro")
+	 public String registro(Model model,@RequestParam String alta, String usuario,String email,
+			  String direccion,  String password,  String valPassword) {
+
+		if(Integer.parseInt(alta)==1) {
+			model.addAttribute("alta",alta);
+			lista.add(new Desguace(usuario,email,direccion,password,valPassword));
+		}
+		/*
 		model.addAttribute("usuario", usuario);
 		model.addAttribute("email", email);
 		model.addAttribute("direccion", direccion);
 		model.addAttribute("password", password);
 		model.addAttribute("valPassword", valPassword);
+		*/
 		
 		
-		System.out.println("++++++++++++++++++++++++"); 
+		
+		//System.out.println("++++++++++++++++++++++++"); 
 		return "prueba";
 		
 		 
