@@ -20,7 +20,7 @@ public class RegistroController {
 	 private UserService usersService;
 	 
 	 
-	 
+	 /*
 	 @RequestMapping(value = "/registro", method=RequestMethod.GET)
 	 public String registro(Model model) {
 		
@@ -31,19 +31,23 @@ public class RegistroController {
 		 
 		 
 	 }
+	 */
 	 
 	 
-	 @RequestMapping(value = "/registro", method=RequestMethod.POST)
-	 public String registro(Model model,@RequestParam String usuario, @RequestParam String email,
-			 @RequestParam String direccion, @RequestParam String password, @RequestParam String valPassword) {
+	 @RequestMapping(value = "/registro")
+	 public String registro(Model model,@RequestParam String alta, String usuario,String email,
+			  String direccion,  String password,  String valPassword) {
 		
-		
+		if(Integer.parseInt(alta)==1) {
+			lista
+		}
+		/*
 		model.addAttribute("usuario", usuario);
 		model.addAttribute("email", email);
 		model.addAttribute("direccion", direccion);
 		model.addAttribute("password", password);
 		model.addAttribute("valPassword", valPassword);
-		
+		*/
 		
 		System.out.println("++++++++++++++++++++++++"); 
 		return "prueba";
