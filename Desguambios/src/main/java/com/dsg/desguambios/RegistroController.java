@@ -43,7 +43,10 @@ public class RegistroController {
 			
 			lista.add(new Desguace(usuario,email,direccion,password,valPassword));
 			
+			model.addAttribute("mensaje", true);
 			
+		} else {
+			model.addAttribute("mensaje", false);
 		}
 		 
 		return "registro";
@@ -51,6 +54,22 @@ public class RegistroController {
 		 
 	 } 
 	 
+	 @RequestMapping(value = "/prueba", method=RequestMethod.GET)
+	 public String registro(Model model) {
+		
+		 model.addAttribute("usuario", lista.get(0).getUsuario());
+		 model.addAttribute("direccion", lista.get(0).getDireccion());
+		 model.addAttribute("password", lista.get(0).getPassword());
+		 model.addAttribute("email", lista.get(0).getEmail());
+		 model.addAttribute("valPassword", lista.get(0).getValPassword());
+
+		 
+		 
+		return "prueba";
+		 
+		 
+		 
+	 }
 	 
 	 
 	 
