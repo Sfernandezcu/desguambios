@@ -59,7 +59,7 @@ public class RegistroController {
 		 
 	 } 
 	 
-	 @RequestMapping(value = "/prueba", method=RequestMethod.GET)
+	 @RequestMapping(value = "/prueba")
 	 public String registro(Model model) {
 		
 		 model.addAttribute("usuario", lista.get(0).getUsuario());
