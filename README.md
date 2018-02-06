@@ -23,7 +23,7 @@ Buscador de piezas de desguace donde añades la pieza que deseas, y aparecen los
 # ENTIDADES PRINCIPALES
 - Desguace: Desguaces que contienen piezas que los clientes buscan.
 - Cliente: Se puede registrar, puede añadir información sobre su empresa, precios de sus productos.
-- Producto: Lo que está buscando el cliente.
+- Producto: Lo que está buscando el cliente.(Literal del producto, id del producto, nombre del desguace.usuario, direccion del desguace.direccion e id de la marca(renault, citroën, etc)  )
 - Comentarios: comentarios acerca de la pieza.
 - Imagen: imagen descriptiva del producto
   
