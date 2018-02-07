@@ -25,18 +25,25 @@ public class DesguambiosController {
 			listaPiezas.add(pieza_B);
 		}
 		
-		@RequestMapping ("/")
+		@RequestMapping ("/mostrarPiezas")
 		public String iterarSobreLaListaDePiezas(Model model) {
 			aniadirPiezas();
 			model.addAttribute("listaPiezas",listaPiezas);
 			
 			return "mostrarPiezas";
 		}
-		/*
+		
+		@RequestMapping ("/subirPieza")
+		public String subirPieza(Model model) {
+			
+			
+			return "mostrarPiezas";
+		}
+		
 		@RequestMapping("/")
 		public String webIndex(Model model) {
 			return "index";
-		}*/
+		}
 		
 		@RequestMapping("/login")
 		public String weblogin(Model model) {
