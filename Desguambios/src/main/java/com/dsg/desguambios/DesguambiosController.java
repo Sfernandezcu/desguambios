@@ -15,20 +15,7 @@ public class DesguambiosController {
 		@Autowired
 		
 		 public ArrayList<Desguace> lista = new ArrayList<>();
-		 
-		 /*
-		 @RequestMapping(value = "/registro", method=RequestMethod.GET)
-		 public String registro(Model model) {
-			
-			 
-			 
-			 return "registro";
-			 
-			 
-			 
-		 }
-		 */
-		 
+		
 		 @RequestMapping(value = "/registro")
 		 public String registro(Model model,@RequestParam String alta, String usuario,String email,
 				  String direccion,  String password,  String valPassword) {
