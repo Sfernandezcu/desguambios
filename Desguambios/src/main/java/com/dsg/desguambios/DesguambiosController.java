@@ -14,8 +14,13 @@ public class DesguambiosController {
 		public ArrayList<Desguace> lista = new ArrayList<>();
 		
 		@RequestMapping("/")
-		public String webInicial(Model model) {
+		public String webIndex(Model model) {
 			return "index";
+		}
+		
+		@RequestMapping("/login")
+		public String weblogin(Model model) {
+			return "login";
 		}
 		
 		 @RequestMapping(value = "/registro")
