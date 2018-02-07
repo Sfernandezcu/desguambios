@@ -1,6 +1,8 @@
 package com.dsg.desguambios;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,11 +14,29 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class DesguambiosController {
 		
 		public ArrayList<Desguace> lista = new ArrayList<>();
+		public ArrayList<Pieza> listaPiezas = new ArrayList<>();
+		Pieza pieza_A= new Pieza("a","a","a","a","a");
+		Pieza pieza_B= new Pieza("b","b,","b","b,","b");
 		
+		
+		
+		public void aniadirPiezas() {
+			listaPiezas.add(pieza_A);
+			listaPiezas.add(pieza_B);
+		}
+		
+		@RequestMapping ("/")
+		public String iterarSobreLaListaDePiezas(Model model) {
+			aniadirPiezas();
+			model.addAttribute("listaPiezas",listaPiezas);
+			
+			return "mostrarPiezas";
+		}
+		/*
 		@RequestMapping("/")
 		public String webIndex(Model model) {
 			return "index";
-		}
+		}*/
 		
 		@RequestMapping("/login")
 		public String weblogin(Model model) {

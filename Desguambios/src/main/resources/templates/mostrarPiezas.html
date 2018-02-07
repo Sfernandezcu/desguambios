@@ -3,6 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
+<table>
+		{{#listaPiezas}}
+   		<tr>
+        	<td>{{-index}}</td>
+        	<td>{{.}}</td>
+      	</tr>
+      	{{/listaPiezas}}	
+   	</table>
 </head>
 <body>
 
