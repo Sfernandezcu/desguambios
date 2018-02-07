@@ -7,10 +7,7 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class DesguambiosApplication {
 	
-	@Bean
-	public UserService usersService() {
-		return new UserService(8);
-	}
+	
 
 	public static void main(String[] args) {
 		SpringApplication.run(DesguambiosApplication.class, args);
