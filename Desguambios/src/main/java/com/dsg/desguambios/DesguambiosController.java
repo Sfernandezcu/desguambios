@@ -8,13 +8,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+@Controller
 public class DesguambiosController {
-	@Controller
-	public class RegistroController {
-
-		@Autowired
 		
-		 public ArrayList<Desguace> lista = new ArrayList<>();
+		public ArrayList<Desguace> lista = new ArrayList<>();
 		
 		 @RequestMapping(value = "/registro")
 		 public String registro(Model model,@RequestParam String alta, String usuario,String email,
@@ -61,16 +58,10 @@ public class DesguambiosController {
 			 
 			 
 			 
-		 }
-		 
-		 @RequestMapping("/login")
-			public String login(Model model) {
-				return "login";
-		 }
-		 
+		 }		 
 		 
 		 
 		 
 	}
 
-}
+

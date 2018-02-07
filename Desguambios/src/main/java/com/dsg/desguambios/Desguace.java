@@ -1,5 +1,8 @@
 package com.dsg.desguambios;
 
+import org.springframework.stereotype.Component;
+
+
 public class Desguace {
 	
 	private String usuario;
@@ -7,6 +10,7 @@ public class Desguace {
 	private String direccion;
 	private String password;
 	private String valPassword;
+	
 	
 	public Desguace() {
 		
