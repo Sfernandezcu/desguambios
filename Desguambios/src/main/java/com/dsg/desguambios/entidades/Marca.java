@@ -1,4 +1,4 @@
-package com.dsg.desguambios;
+package com.dsg.desguambios.entidades;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
