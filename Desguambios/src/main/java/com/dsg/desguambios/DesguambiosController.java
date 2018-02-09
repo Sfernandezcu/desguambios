@@ -11,15 +11,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.dsg.desguambios.entidades.Cliente;
+import com.dsg.desguambios.entidades.Producto;
 import com.dsg.desguambios.repositorios.ClienteRepository;
 
 @Controller
 public class DesguambiosController {
 		
 		public ArrayList<Cliente> lista = new ArrayList<>();
-		public ArrayList<Pieza> listaPiezas = new ArrayList<>();
-		Pieza pieza_A= new Pieza("a","a","a","a","a");
-		Pieza pieza_B= new Pieza("b","b,","b","b,","b");
+		public ArrayList<Producto> listaPiezas = new ArrayList<>();
+		Producto pieza_A= new Producto("","","",1);
+		Producto pieza_B= new Producto("","","",2);
 		
 		//creado repositorio clientes
 		@Autowired
