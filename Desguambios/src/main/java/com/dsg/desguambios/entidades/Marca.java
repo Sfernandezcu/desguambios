@@ -30,4 +30,9 @@ public class Marca {
 		this.lit_marca = lit_marca;
 	}
 	
+	@Override
+	public String toString() {
+		return "Marca [idMarca=" + id_marca + ", Marca del coche=" + lit_marca + "]";
+	}
+	
 }

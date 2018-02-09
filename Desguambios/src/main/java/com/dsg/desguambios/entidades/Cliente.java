@@ -52,6 +52,12 @@ public class Cliente {
 	public void setPassword (String password) {
 		this.password = password;
 	}
+
+	@Override
+	public String toString() {
+		return "Cliente [usuario=" + usuario + ", email=" + email + ", direccion=" + direccion + ", password="
+				+ password + "]";
+	}
 	
 
 }
