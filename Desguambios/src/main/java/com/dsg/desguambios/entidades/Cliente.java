@@ -15,19 +15,28 @@ public class Cliente {
 	
 	
 	
-	
+	private String desguace;
 	private String email;
 	private String direccion;
 	private String password;
 	
 	protected Cliente () {}
 	
-	public Cliente (String email, String direccion, String password) {
+	public Cliente (String desguace,String email, String direccion, String password) {
+		this.desguace = desguace;
 		this.email = email;
 		this.direccion = direccion;
 		this.password = password;
 	}
 	
+	public String getDesguace() {
+		return this.desguace;
+	}
+	
+	
+	public void setDesguace(String desguace) {
+		this.desguace = desguace;		
+	}
 	
 	public String getEmail () {
 		return email;
