@@ -11,7 +11,7 @@ public class Marca {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer id_marca;
+	private int idMarca;
 	
 	
 	private String lit_marca;
@@ -34,7 +34,7 @@ public class Marca {
 	
 	@Override
 	public String toString() {
-		return "Marca [idMarca=" + id_marca + ", Marca del coche=" + lit_marca + "]";
+		return "Marca [idMarca=" + idMarca + ", Marca del coche=" + lit_marca + "]";
 	}
 	
 }

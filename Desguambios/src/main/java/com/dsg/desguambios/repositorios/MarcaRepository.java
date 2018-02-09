@@ -5,12 +5,15 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.dsg.desguambios.entidades.Marca;
-import com.dsg.desguambios.entidades.Producto;
 
 
-public interface MarcaRepository extends JpaRepository<Marca, Long>{
+
+public interface MarcaRepository extends JpaRepository<Marca, Integer>{
 	
 	
-	List<Producto> findAllByLit_Marca(String lit_marca);
+	Marca findByIdMarca(int idMarca);
+	
+	
+	List<Marca> findAllByLit_Marca(String lit_marca);
 
 }

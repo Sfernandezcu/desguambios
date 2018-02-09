@@ -9,10 +9,10 @@ import com.dsg.desguambios.entidades.Producto;
 
 
 //añadir consultas personalizadas
-public interface ProductoRepository extends JpaRepository<Producto, Long>{
+public interface ProductoRepository extends JpaRepository<Producto, Integer>{
 
 	
-	Producto findById_producto(long id_producto);
+	Producto findByIdProducto(int idProducto);
 	
 	
 	List<Producto> findAllByLitProducto(String lit_producto);

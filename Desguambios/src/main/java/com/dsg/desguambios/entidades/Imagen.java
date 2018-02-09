@@ -12,14 +12,14 @@ public class Imagen {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer id_imagen;
+	private Integer idImagen;
 	
 	
 	
 	
 
 	private String url;
-	private Integer id_producto;
+	private int id_producto;
 	
 	protected Imagen () {}
 	
@@ -48,7 +48,7 @@ public class Imagen {
 
 	@Override
 	public String toString() {
-		return "Imagen [id_imagen=" + id_imagen + ", url=" + url + ", id_producto=" + id_producto + "]";
+		return "Imagen [id_imagen=" + idImagen + ", url=" + url + ", id_producto=" + id_producto + "]";
 	}
 	
 	
