@@ -5,11 +5,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+
+@Entity
 public class Marca {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id_marca;
+	private Integer id_marca;
 	
 	
 	private String lit_marca;

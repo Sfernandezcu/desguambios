@@ -6,24 +6,24 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-
+@Entity
 public class Imagen {
 
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id_imagen;
+	private Integer id_imagen;
 	
 	
 	
 	
 
 	private String url;
-	private long id_producto;
+	private Integer id_producto;
 	
 	protected Imagen () {}
 	
-	public Imagen (String url, long id_producto) {
+	public Imagen (String url, Integer id_producto) {
 		this.url = url;
 		this.id_producto = id_producto;
 	}
