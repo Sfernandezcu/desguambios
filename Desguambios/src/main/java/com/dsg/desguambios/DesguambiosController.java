@@ -23,8 +23,9 @@ public class DesguambiosController {
 		Producto pieza_B= new Producto("","","",2);
 		
 		//creado repositorio clientes
-		@Autowired
-		private ClienteRepository repositorioClientes;
+		
+		//@Autowired
+		//private ClienteRepository repositorioClientes;
 		
 		
 		
@@ -67,7 +68,7 @@ public class DesguambiosController {
 				//añadir desguace al repositorio
 				Cliente cliente = new Cliente(desguace,email,direccion,password);
 				
-				repositorioClientes.save(cliente);
+				//repositorioClientes.save(cliente);
 				
 				
 				model.addAttribute("mensaje", true);
