@@ -25,7 +25,7 @@ public class DesguambiosController {
 		//creado repositorio clientes
 		
 		//@Autowired
-		//private ClienteRepository repositorioClientes;
+		//private  ClienteRepository repositorioClientes;
 		
 		
 		
