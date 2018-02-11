@@ -1,4 +1,4 @@
-package com.dsg.desguambios;
+package com.dsg.desguambios.controlador;
 
 import java.util.ArrayList;
 import java.util.Arrays;
