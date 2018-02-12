@@ -16,29 +16,38 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.dsg.desguambios.entidades.Desguace;
 import com.dsg.desguambios.entidades.Producto;
 import com.dsg.desguambios.repositorios.DesguaceRepository;
+import com.dsg.desguambios.repositorios.ProductoRepository;
+
+
 
 @Controller
 public class DesguambiosController {
 		
-		public ArrayList<Desguace> lista = new ArrayList<>();
+		//public ArrayList<Desguace> lista = new ArrayList<>();
 		public ArrayList<Producto> listaProductos = new ArrayList<>();
 		Producto Producto_A= new Producto("a","a","a",1);
 		Producto Producto_B= new Producto("b","b,","b",2);
+		
 		
 		private Desguace desguacePepe = new Desguace("Pepe","pepe@gmail.com","Calle Falsa 123","pepe","pepe");
 		
 		@Autowired
 		private Desguace instanciaDesguace = null;
 		@Autowired
-		private DesguaceRepository repository;
+		private DesguaceRepository desguaceRepository;
+		@Autowired
+		private ProductoRepository productoRepository;
 		
 		
 		@PostConstruct
 		public void aniadirProductos() {
-			repository.save(desguacePepe);
-			listaProductos.add(Producto_A);
-			listaProductos.add(Producto_B);
-			lista.add(desguacePepe);
+			desguaceRepository.save(desguacePepe);
+			productoRepository.save(Producto_A);
+			productoRepository.save(Producto_B);
+			
+			//listaProductos.add(Producto_A);
+			//listaProductos.add(Producto_B);
+			//lista.add(desguacePepe);
 		}
 		
 		@RequestMapping("/")
@@ -46,7 +55,7 @@ public class DesguambiosController {
 			return "index";
 		}
 		
-		
+		/*
 		public Desguace buscarDes(String usuario) {
 			Desguace d = new Desguace();
 			
@@ -58,14 +67,14 @@ public class DesguambiosController {
 			
 			return d;
 		}
-		
-		
+		}*/
 		
 		@RequestMapping("/datosAlHacerLogin")
 		public String datosAlHacerLogin(Model model,@RequestParam String usuario,@RequestParam String password){
-			Desguace user = new Desguace();
-			user=buscarDes(usuario);
-			if(user.getUsuario().equals(usuario)&& user.getPassword().equals(password)) {
+			//Desguace user = new Desguace();
+			List<Desguace>lista =desguaceRepository.findByUsuario(usuario);
+			
+			if(lista.get(0).getUsuario().equals(usuario)&& lista.get(0).getPassword().equals(password)) {
 				
 				return "subirEliminarEditar";
 			}else {
@@ -172,8 +181,8 @@ public class DesguambiosController {
 				Desguace desguace = new Desguace(usuario,email,direccion,password,valPassword);
 				Desguace desguace1 = new Desguace("guiulle","guiulle","guiulle","guiulle","guiulle");
 	
-				lista.add(desguace);
-				lista.add(desguace1);
+				//lista.add(desguace); Sin meter en repository 
+				//lista.add(desguace1);
 	
 				
 				
@@ -187,7 +196,7 @@ public class DesguambiosController {
 				 
 			 
 		 } 
-		 
+		 /*
 		 @RequestMapping(value = "/prueba")
 		 public String registro(Model model) {
 			
@@ -209,7 +218,7 @@ public class DesguambiosController {
 			 
 			 
 			 
-		 }		 
+		 }		*/ 
 		 
 		 
 		 

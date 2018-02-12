@@ -15,7 +15,7 @@ import org.springframework.web.context.annotation.SessionScope;
 public class Desguace {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	//@GeneratedValue(strategy = GenerationType.AUTO)
 	private String usuario;
 	
 	
