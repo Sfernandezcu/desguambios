@@ -30,12 +30,12 @@ public class DesguambiosController {
 			listaPiezas.add(pieza_B);
 		}
 		
-		/*@RequestMapping ("/mostrarPiezas")
+		/*@RequestMapping ("/verMisProductos")
 		public String iterarSobreLaListaDePiezas(Model model) {
 			aniadirPiezas();
 			model.addAttribute("listaPiezas",listaPiezas);
 			
-			return "mostrarPiezas";
+			return "verMisProductos";
 		}*/
 		@RequestMapping("/")
 		public String webIndex(Model model) {
@@ -84,7 +84,7 @@ public class DesguambiosController {
 			listaPiezas.add(pieza);
 			listaPiezas.add(pieza_A);
 			model.addAttribute("listaPiezas",listaPiezas);
-			return "mostrarPiezas";
+			return "verMisProductos";
 		}
 		
 		 @RequestMapping(value = "/registro")
