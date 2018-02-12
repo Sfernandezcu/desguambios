@@ -20,7 +20,7 @@ public class DesguambiosController {
 		Pieza pieza_A= new Pieza("a","a","a","a","a");
 		Pieza pieza_B= new Pieza("b","b,","b","b,","b");
 		
-		private Desguace desguacePepe = new Desguace("Pepe","pepe@gmail.com","Calle Falsa 123","root1234","root1234");
+		private Desguace desguacePepe = new Desguace("Pepe","pepe@gmail.com","Calle Falsa 123","pepe","pepe");
 		
 		@Autowired
 		private Desguace instanciaDesguace = null;
