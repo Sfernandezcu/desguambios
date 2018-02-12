@@ -32,15 +32,34 @@ public class DesguambiosController {
 		public void aniadirProductos() {
 			listaProductos.add(Producto_A);
 			listaProductos.add(Producto_B);
+			lista.add(desguacePepe);
 		}
 		
 		@RequestMapping("/")
 		public String webIndex(Model model) {
 			return "index";
 		}
+		
+		
+		public Desguace buscarDes(String usuario) {
+			Desguace d = new Desguace();
+			
+			for(Desguace ds : lista) {
+				if(ds.getUsuario().equals(usuario)) {
+					d = ds;
+				}
+			}		
+			
+			return d;
+		}
+		
+		
+		
 		@RequestMapping("/datosAlHacerLogin")
 		public String datosAlHacerLogin(Model model,@RequestParam String usuario,@RequestParam String password){
-			if(desguacePepe.getUsuario().equals(usuario)&& desguacePepe.getPassword().equals(password)) {
+			Desguace user = new Desguace();
+			user=buscarDes(usuario);
+			if(user.getUsuario().equals(usuario)&& user.getPassword().equals(password)) {
 				
 				return "subirEliminarEditar";
 			}else {
@@ -141,9 +160,7 @@ public class DesguambiosController {
 		 @RequestMapping(value = "/registro")
 		 public String registro(Model model,@RequestParam String alta, String usuario,String email,
 				  String direccion,  String password,  String valPassword) {
-			 
-			 desguacePepe.setUsuario(usuario);
-			 desguacePepe.setDireccion(direccion);
+			
 		
 			if(Integer.parseInt(alta)==1) {
 				Desguace desguace = new Desguace(usuario,email,direccion,password,valPassword);
