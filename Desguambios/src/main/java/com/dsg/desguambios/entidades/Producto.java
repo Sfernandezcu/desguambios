@@ -7,13 +7,13 @@ public class Producto {
 	
 	//@Id
 	//@GeneratedValue(strategy = GenerationType.AUTO)
-	private int idProducto;
+	private long idProducto;
 	
 	
 	private String lit_producto;
 	private String dir_empresa;
 	private String usuario;
-	private Integer id_marca;
+	private int id_marca;
 
 	protected Producto () {}
 	

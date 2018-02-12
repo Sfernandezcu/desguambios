@@ -7,7 +7,7 @@ public class Marca {
 
 	//@Id
 	//@GeneratedValue(strategy = GenerationType.AUTO)
-	private int idMarca;
+	private long idMarca;
 	
 	
 	private String lit_marca;

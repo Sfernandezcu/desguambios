@@ -8,7 +8,7 @@ public class Imagen {
 	
 	//@Id
 	//@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer idImagen;
+	private long idImagen;
 	
 	
 	
