@@ -22,6 +22,7 @@ public class DesguambiosController {
 		public ArrayList<Producto> listaProductos = new ArrayList<>();
 		Producto Producto_A= new Producto("a","a","a",1);
 		Producto Producto_B= new Producto("b","b,","b",2);
+		Producto Producto_C= new Producto("c","c,","c",2);
 		
 		private Desguace desguacePepe = new Desguace("Pepe","pepe@gmail.com","Calle Falsa 123","pepe","pepe");
 		
@@ -32,6 +33,7 @@ public class DesguambiosController {
 		public void aniadirProductos() {
 			listaProductos.add(Producto_A);
 			listaProductos.add(Producto_B);
+			listaProductos.add(Producto_C);
 		}
 		
 		/*@RequestMapping ("/verMisProductos")
@@ -86,7 +88,6 @@ public class DesguambiosController {
 		public String subirNuevoProducto(Model model,@RequestParam String lit_producto,@RequestParam String dir_empresa,@RequestParam String usuario,@RequestParam Integer id_marca) {
 			Producto Producto = new Producto ( lit_producto,  dir_empresa,  usuario,id_marca);
 			listaProductos.add(Producto);
-			listaProductos.add(Producto_A);
 			model.addAttribute("listaProductos",listaProductos);
 			return "verMisProductos";
 		}
@@ -107,9 +108,11 @@ public class DesguambiosController {
 		
 		@RequestMapping(value = "/datosEditarProducto")
 		public String datosEditarProducto(Model model,@RequestParam String idProducto) {
+			
 			for(Producto producto:listaProductos) {
-				if(producto.getLitProducto()==idProducto) {
-					System.out.println(producto.toString());
+				if(producto.getLitProducto().equals(idProducto)) {
+			
+					
 					model.addAttribute("lit_producto",producto.getLitProducto());
 					model.addAttribute("id_marca",producto.getIdMarca());
 					model.addAttribute("nombredesguacepropietario",producto.getUsuario());
