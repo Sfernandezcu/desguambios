@@ -8,18 +8,21 @@
 
 
 
-<form action="/login">
+<form action="/datosAlHacerLogin" method="post">
+		Usuario:
 		<input name="usuario" type="text" >
+		Contraseña:
 		<input name="password" type="password">   
 		<input type="submit" value="Iniciar Sesion"/>
 </form>
 
-
-<form action="/registro">
-		<input type="submit" value="Registrarse" />
+<p></p>
+<form action="/nuevoRegistro">
+		<input type="submit" value="Ir a registro" />
 		<input name="alta" type="hidden" value="0">
-</form>
-<a href="/"> Volver a Inicio</a>
+	</form>
+	
+<p></p>	
 </body>
 </html>
 
