@@ -34,13 +34,6 @@ public class DesguambiosController {
 			listaProductos.add(Producto_B);
 		}
 		
-		/*@RequestMapping ("/verMisProductos")
-		public String iterarSobreLaListaDeProductos(Model model) {
-			aniadirProductos();
-			model.addAttribute("listaProductos",listaProductos);
-			
-			return "verMisProductos";
-		}*/
 		@RequestMapping("/")
 		public String webIndex(Model model) {
 			return "index";
@@ -82,9 +75,10 @@ public class DesguambiosController {
 			return "subirProducto";
 		}
 		
-
-		public String subirNuevoProducto(Model model,@RequestParam String lit_producto,@RequestParam String dir_empresa,@RequestParam String usuario,@RequestParam Integer id_marca) {
-			Producto Producto = new Producto ( lit_producto,  dir_empresa,  usuario,id_marca);
+		@RequestMapping(value = "/subirNuevoProducto")
+		public String subirNuevoProducto(Model model,@RequestParam String lit_producto,@RequestParam String dir_empresa,@RequestParam String usuario,@RequestParam String id_marca) {
+			int nM = Integer.parseInt(id_marca);
+			Producto Producto = new Producto ( lit_producto,  dir_empresa,  usuario,nM);
 			listaProductos.add(Producto);
 			listaProductos.add(Producto_A);
 			model.addAttribute("listaProductos",listaProductos);
@@ -105,17 +99,40 @@ public class DesguambiosController {
 			return "buscadorEditarProducto";
 		}
 		
-		@RequestMapping(value = "/datosEditarProducto")
-		public String datosEditarProducto(Model model,@RequestParam String idProducto) {
-			for(Producto producto:listaProductos) {
-				if(producto.getLitProducto()==idProducto) {
-					System.out.println(producto.toString());
-					model.addAttribute("lit_producto",producto.getLitProducto());
-					model.addAttribute("id_marca",producto.getIdMarca());
-					model.addAttribute("nombredesguacepropietario",producto.getUsuario());
-					model.addAttribute("nombredireccionpropietario",producto.getDirEmpresa());
+		
+		@RequestMapping(value = "/subirProductoEditado")
+		public String subirProductoEditado(Model model,@RequestParam String lit_producto,@RequestParam String dir_empresa,@RequestParam String usuario,@RequestParam String id_marca) {
+			int nM = Integer.parseInt(id_marca);
+			Producto Producto = new Producto ( lit_producto,  dir_empresa,  usuario,nM);
+			listaProductos.add(Producto);
+			model.addAttribute("listaProductos",listaProductos);
+			return "verMisProductos";
+		}
+		
+		
+		public Producto buscarP(String idProducto) {
+			Producto p= new Producto();
+			for(Producto producto : listaProductos) {
+				if(producto.getLitProducto().equals(idProducto)) {
+				   p=producto;
+					
 				}
 			}
+			return p;
+		}
+		
+		@RequestMapping(value = "/datosEditarProducto")
+		public String datosEditarProducto(Model model,@RequestParam String idProducto) {
+			
+			
+			Producto producto;
+			producto = buscarP(idProducto);
+			System.out.println(producto.toString());
+			model.addAttribute("lit_producto",producto.getLitProducto());
+			model.addAttribute("id_marca",producto.getIdMarca());
+			model.addAttribute("nombredesguacepropietario",producto.getUsuario());
+			model.addAttribute("nombredireccionpropietario",producto.getDirEmpresa());
+			listaProductos.remove(producto);
 			return "editarProducto";
 		}
 		
