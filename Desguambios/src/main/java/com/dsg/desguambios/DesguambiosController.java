@@ -83,6 +83,7 @@ public class DesguambiosController {
 			Pieza pieza = new Pieza (literalDelProducto,idDelProducto,idDeLaMarca,desguacepropietario,direccionDelDesguace);
 			listaPiezas.add(pieza);
 			listaPiezas.add(pieza_A);
+			listaPiezas.
 			model.addAttribute("listaPiezas",listaPiezas);
 			return "verMisProductos";
 		}
