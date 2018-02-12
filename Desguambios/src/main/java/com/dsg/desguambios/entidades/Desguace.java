@@ -1,4 +1,4 @@
-package com.dsg.desguambios;
+package com.dsg.desguambios.entidades;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.annotation.SessionScope;
