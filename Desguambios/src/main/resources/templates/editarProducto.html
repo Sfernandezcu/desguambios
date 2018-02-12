@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Editando producto</title>
+</head>
+<body>
+<h1>Editando producto</h1>
+	<form action="/subirNuevoProducto">
+	<p>Nombre literal Del Producto:
+	<input  name="lit_producto" type="text" placeholder="lit_producto" value={{lit_producto}}></p>
+	<p>idDeLaMarca:
+	<input  name="id_marca" type="text" placeholder="id_marca" value={{id_marca}}></p>
+	<p>desguacepropietario:
+	<input  name="nombredesguacepropietario" type="text" placeholder="nombredesguacepropietario" value="{{nombredesguacepropietario}}"></p>
+	<p>direccionDelDesguace:
+	<input  name="nombredireccionpropietario" type="text" placeholder="nombredireccionpropietario" value="{{nombredireccionpropietario}}"></p>
+	
+	<input  name="alta" type="hidden" value="1">
+	<input  type="submit" value="Subir Producto">
+</form>
+</body>
+</html>

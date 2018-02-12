@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,7 @@ public class DesguambiosController {
 		@Autowired
 		private Desguace instanciaDesguace = null;
 		
+		@PostConstruct
 		public void aniadirProductos() {
 			listaProductos.add(Producto_A);
 			listaProductos.add(Producto_B);
@@ -72,6 +74,7 @@ public class DesguambiosController {
 			return "subirEliminarEditar";
 		}
 		
+		
 		@RequestMapping(value = "/subirProducto")
 		public String subirProducto1(Model model) {
 			model.addAttribute("nombredesguacepropietario",desguacePepe.getUsuario());
@@ -95,6 +98,26 @@ public class DesguambiosController {
 			return "verMisProductos";
 		}
 		
+		
+		@RequestMapping(value = "/editarProducto")
+		public String vistaEditarProducto(Model model) {
+			
+			return "buscadorEditarProducto";
+		}
+		
+		@RequestMapping(value = "/datosEditarProducto")
+		public String datosEditarProducto(Model model,@RequestParam String idProducto) {
+			for(Producto producto:listaProductos) {
+				if(producto.getLitProducto()==idProducto) {
+					System.out.println(producto.toString());
+					model.addAttribute("lit_producto",producto.getLitProducto());
+					model.addAttribute("id_marca",producto.getIdMarca());
+					model.addAttribute("nombredesguacepropietario",producto.getUsuario());
+					model.addAttribute("nombredireccionpropietario",producto.getDirEmpresa());
+				}
+			}
+			return "editarProducto";
+		}
 		
 		
 		
