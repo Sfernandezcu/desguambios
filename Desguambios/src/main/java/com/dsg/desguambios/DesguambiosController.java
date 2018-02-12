@@ -13,6 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.dsg.desguambios.entidades.Desguace;
 import com.dsg.desguambios.entidades.Producto;
 
 @Controller
