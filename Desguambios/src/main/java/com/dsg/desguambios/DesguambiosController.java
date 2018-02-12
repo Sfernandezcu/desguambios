@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,28 +13,31 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.dsg.desguambios.entidades.Producto;
+
 @Controller
 public class DesguambiosController {
 		
 		public ArrayList<Desguace> lista = new ArrayList<>();
-		public ArrayList<Pieza> listaPiezas = new ArrayList<>();
-		Pieza pieza_A= new Pieza("a","a","a","a","a");
-		Pieza pieza_B= new Pieza("b","b,","b","b,","b");
+		public ArrayList<Producto> listaProductos = new ArrayList<>();
+		Producto Producto_A= new Producto("a","a","a",1);
+		Producto Producto_B= new Producto("b","b,","b",2);
 		
 		private Desguace desguacePepe = new Desguace("Pepe","pepe@gmail.com","Calle Falsa 123","pepe","pepe");
 		
 		@Autowired
 		private Desguace instanciaDesguace = null;
 		
-		public void aniadirPiezas() {
-			listaPiezas.add(pieza_A);
-			listaPiezas.add(pieza_B);
+		@PostConstruct
+		public void aniadirProductos() {
+			listaProductos.add(Producto_A);
+			listaProductos.add(Producto_B);
 		}
 		
 		/*@RequestMapping ("/verMisProductos")
-		public String iterarSobreLaListaDePiezas(Model model) {
-			aniadirPiezas();
-			model.addAttribute("listaPiezas",listaPiezas);
+		public String iterarSobreLaListaDeProductos(Model model) {
+			aniadirProductos();
+			model.addAttribute("listaProductos",listaProductos);
 			
 			return "verMisProductos";
 		}*/
@@ -70,31 +74,50 @@ public class DesguambiosController {
 			return "subirEliminarEditar";
 		}
 		
+		
 		@RequestMapping(value = "/subirProducto")
-		public String subirPieza1(Model model) {
+		public String subirProducto1(Model model) {
 			model.addAttribute("nombredesguacepropietario",desguacePepe.getUsuario());
 			model.addAttribute("nombredireccionpropietario",desguacePepe.getDireccion());
-			return "subirPieza";
+			return "subirProducto";
 		}
 		
-		@RequestMapping(value = "/subirNuevoProducto")
-		public String subirNuevoProducto(Model model,@RequestParam String literalDelProducto,@RequestParam String idDelProducto,@RequestParam String idDeLaMarca,
-				@RequestParam String desguacepropietario,@RequestParam String direccionDelDesguace) {
-			Pieza pieza = new Pieza (literalDelProducto,idDelProducto,idDeLaMarca,desguacepropietario,direccionDelDesguace);
-			listaPiezas.add(pieza);
-			listaPiezas.add(pieza_A);
-			listaPiezas.
-			model.addAttribute("listaPiezas",listaPiezas);
+
+		public String subirNuevoProducto(Model model,@RequestParam String lit_producto,@RequestParam String dir_empresa,@RequestParam String usuario,@RequestParam Integer id_marca) {
+			Producto Producto = new Producto ( lit_producto,  dir_empresa,  usuario,id_marca);
+			listaProductos.add(Producto);
+			listaProductos.add(Producto_A);
+			model.addAttribute("listaProductos",listaProductos);
 			return "verMisProductos";
 		}
 		
 		@RequestMapping(value = "/verMisProductos")
 		public String verMisProducto(Model model) {
 
-			model.addAttribute("listaPiezas",listaPiezas);
+			model.addAttribute("listaProductos",listaProductos);
 			return "verMisProductos";
 		}
 		
+		
+		@RequestMapping(value = "/editarProducto")
+		public String vistaEditarProducto(Model model) {
+			
+			return "buscadorEditarProducto";
+		}
+		
+		@RequestMapping(value = "/datosEditarProducto")
+		public String datosEditarProducto(Model model,@RequestParam String idProducto) {
+			for(Producto producto:listaProductos) {
+				if(producto.getLitProducto()==idProducto) {
+					System.out.println(producto.toString());
+					model.addAttribute("lit_producto",producto.getLitProducto());
+					model.addAttribute("id_marca",producto.getIdMarca());
+					model.addAttribute("nombredesguacepropietario",producto.getUsuario());
+					model.addAttribute("nombredireccionpropietario",producto.getDirEmpresa());
+				}
+			}
+			return "editarProducto";
+		}
 		
 		
 		
