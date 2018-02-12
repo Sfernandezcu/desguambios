@@ -70,7 +70,7 @@ public class DesguambiosController {
 			return "subirEliminarEditar";
 		}
 		
-		@RequestMapping(value = "/subirPieza")
+		@RequestMapping(value = "/subirProducto")
 		public String subirPieza1(Model model) {
 			model.addAttribute("nombredesguacepropietario",desguacePepe.getUsuario());
 			model.addAttribute("nombredireccionpropietario",desguacePepe.getDireccion());
@@ -86,6 +86,16 @@ public class DesguambiosController {
 			model.addAttribute("listaPiezas",listaPiezas);
 			return "verMisProductos";
 		}
+		
+		@RequestMapping(value = "/verMisProductos")
+		public String verMisProducto(Model model) {
+
+			model.addAttribute("listaPiezas",listaPiezas);
+			return "verMisProductos";
+		}
+		
+		
+		
 		
 		 @RequestMapping(value = "/registro")
 		 public String registro(Model model,@RequestParam String alta, String usuario,String email,
