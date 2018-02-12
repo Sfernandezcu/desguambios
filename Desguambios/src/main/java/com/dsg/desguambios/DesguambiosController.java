@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.dsg.desguambios.entidades.Desguace;
 import com.dsg.desguambios.entidades.Producto;
+import com.dsg.desguambios.repositorios.DesguaceRepository;
 
 @Controller
 public class DesguambiosController {
@@ -28,9 +29,13 @@ public class DesguambiosController {
 		
 		@Autowired
 		private Desguace instanciaDesguace = null;
+		@Autowired
+		private DesguaceRepository repository;
+		
 		
 		@PostConstruct
 		public void aniadirProductos() {
+			repository.save(desguacePepe);
 			listaProductos.add(Producto_A);
 			listaProductos.add(Producto_B);
 			lista.add(desguacePepe);
