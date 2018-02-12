@@ -22,7 +22,6 @@ public class DesguambiosController {
 		public ArrayList<Producto> listaProductos = new ArrayList<>();
 		Producto Producto_A= new Producto("a","a","a",1);
 		Producto Producto_B= new Producto("b","b,","b",2);
-		Producto Producto_C= new Producto("c","c,","c",2);
 		
 		private Desguace desguacePepe = new Desguace("Pepe","pepe@gmail.com","Calle Falsa 123","pepe","pepe");
 		
@@ -33,23 +32,34 @@ public class DesguambiosController {
 		public void aniadirProductos() {
 			listaProductos.add(Producto_A);
 			listaProductos.add(Producto_B);
-			listaProductos.add(Producto_C);
+			lista.add(desguacePepe);
 		}
 		
-		/*@RequestMapping ("/verMisProductos")
-		public String iterarSobreLaListaDeProductos(Model model) {
-			aniadirProductos();
-			model.addAttribute("listaProductos",listaProductos);
-			
-			return "verMisProductos";
-		}*/
 		@RequestMapping("/")
 		public String webIndex(Model model) {
 			return "index";
 		}
+		
+		
+		public Desguace buscarDes(String usuario) {
+			Desguace d = new Desguace();
+			
+			for(Desguace ds : lista) {
+				if(ds.getUsuario().equals(usuario)) {
+					d = ds;
+				}
+			}		
+			
+			return d;
+		}
+		
+		
+		
 		@RequestMapping("/datosAlHacerLogin")
 		public String datosAlHacerLogin(Model model,@RequestParam String usuario,@RequestParam String password){
-			if(desguacePepe.getUsuario().equals(usuario)&& desguacePepe.getPassword().equals(password)) {
+			Desguace user = new Desguace();
+			user=buscarDes(usuario);
+			if(user.getUsuario().equals(usuario)&& user.getPassword().equals(password)) {
 				
 				return "subirEliminarEditar";
 			}else {
@@ -85,9 +95,11 @@ public class DesguambiosController {
 		}
 		
 		@RequestMapping(value = "/subirNuevoProducto")
-		public String subirNuevoProducto(Model model,@RequestParam String lit_producto,@RequestParam String dir_empresa,@RequestParam String usuario,@RequestParam Integer id_marca) {
-			Producto Producto = new Producto ( lit_producto,  dir_empresa,  usuario,id_marca);
+		public String subirNuevoProducto(Model model,@RequestParam String lit_producto,@RequestParam String dir_empresa,@RequestParam String usuario,@RequestParam String id_marca) {
+			int nM = Integer.parseInt(id_marca);
+			Producto Producto = new Producto ( lit_producto,  dir_empresa,  usuario,nM);
 			listaProductos.add(Producto);
+			listaProductos.add(Producto_A);
 			model.addAttribute("listaProductos",listaProductos);
 			return "verMisProductos";
 		}
@@ -106,19 +118,40 @@ public class DesguambiosController {
 			return "buscadorEditarProducto";
 		}
 		
+		
+		@RequestMapping(value = "/subirProductoEditado")
+		public String subirProductoEditado(Model model,@RequestParam String lit_producto,@RequestParam String dir_empresa,@RequestParam String usuario,@RequestParam String id_marca) {
+			int nM = Integer.parseInt(id_marca);
+			Producto Producto = new Producto ( lit_producto,  dir_empresa,  usuario,nM);
+			listaProductos.add(Producto);
+			model.addAttribute("listaProductos",listaProductos);
+			return "verMisProductos";
+		}
+		
+		
+		public Producto buscarP(String idProducto) {
+			Producto p= new Producto();
+			for(Producto producto : listaProductos) {
+				if(producto.getLitProducto().equals(idProducto)) {
+				   p=producto;
+					
+				}
+			}
+			return p;
+		}
+		
 		@RequestMapping(value = "/datosEditarProducto")
 		public String datosEditarProducto(Model model,@RequestParam String idProducto) {
 			
-			for(Producto producto:listaProductos) {
-				if(producto.getLitProducto().equals(idProducto)) {
 			
-					
-					model.addAttribute("lit_producto",producto.getLitProducto());
-					model.addAttribute("id_marca",producto.getIdMarca());
-					model.addAttribute("nombredesguacepropietario",producto.getUsuario());
-					model.addAttribute("nombredireccionpropietario",producto.getDirEmpresa());
-				}
-			}
+			Producto producto;
+			producto = buscarP(idProducto);
+			System.out.println(producto.toString());
+			model.addAttribute("lit_producto",producto.getLitProducto());
+			model.addAttribute("id_marca",producto.getIdMarca());
+			model.addAttribute("nombredesguacepropietario",producto.getUsuario());
+			model.addAttribute("nombredireccionpropietario",producto.getDirEmpresa());
+			listaProductos.remove(producto);
 			return "editarProducto";
 		}
 		
@@ -127,9 +160,7 @@ public class DesguambiosController {
 		 @RequestMapping(value = "/registro")
 		 public String registro(Model model,@RequestParam String alta, String usuario,String email,
 				  String direccion,  String password,  String valPassword) {
-			 
-			 desguacePepe.setUsuario(usuario);
-			 desguacePepe.setDireccion(direccion);
+			
 		
 			if(Integer.parseInt(alta)==1) {
 				Desguace desguace = new Desguace(usuario,email,direccion,password,valPassword);
@@ -177,5 +208,3 @@ public class DesguambiosController {
 		 
 		 
 	}
-
-

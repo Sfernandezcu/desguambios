@@ -15,7 +15,7 @@ public class Producto {
 	private String usuario;
 	private int id_marca;
 
-	protected Producto () {}
+	public Producto () {}
 	
 	public Producto (String lit_producto, String dir_empresa, String usuario, Integer id_marca) {
 		this.lit_producto=lit_producto;
