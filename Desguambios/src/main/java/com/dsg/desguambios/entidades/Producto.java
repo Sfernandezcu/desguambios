@@ -16,11 +16,11 @@ public class Producto {
 	private String litProducto;
 	private String dirEmpresa;
 	private String usuario;
-	private int idMarca;
+	private String idMarca;
 
 	public Producto () {}
 	
-	public Producto (String litProducto, String dir_empresa, String usuario, Integer id_marca) {
+	public Producto (String litProducto, String dir_empresa, String usuario, String id_marca) {
 		this.litProducto=litProducto;
 		this.dirEmpresa=dir_empresa;
 		this.usuario=usuario;
@@ -53,11 +53,11 @@ public class Producto {
 		this.usuario = usuario;
 	}
 	
-	public Integer getIdMarca () {
+	public String getIdMarca () {
 		return idMarca;
 	}
 	
-	public void setIdMarca (Integer id_marca) {
+	public void setIdMarca (String id_marca) {
 		this.idMarca = id_marca;
 	}
 	

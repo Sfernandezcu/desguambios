@@ -8,6 +8,7 @@ import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -38,14 +39,14 @@ public class DesguambiosController {
 		@PostConstruct
 		public void init() {
 			Desguace desguacePepe = new Desguace("Pepe","pepe@gmail.com","Calle epep 123","pepe","pepe");
-			Producto Producto_A= new Producto("Retrovisor","Calle epep 123","Pepe",1);
-			Producto Producto_B= new Producto("Luna","Calle epep 123","Pepe",2);
-			Producto Producto_C= new Producto("Puerta","Calle epep 123","Pepe",3);
+			Producto Producto_A= new Producto("Retrovisor","Calle epep 123","Pepe","Bmw");
+			Producto Producto_B= new Producto("Luna","Calle epep 123","Pepe","Mercedes");
+			Producto Producto_C= new Producto("Puerta","Calle epep 123","Pepe","Renault");
 			
 			Desguace desguaceLuis = new Desguace("Luis","pepe@gmail.com","Calle siul 123","luis","luis");
-			Producto Producto_D= new Producto("Retrovisor","Calle siul 123","Luis",1);
-			Producto Producto_E= new Producto("Luna","Calle siul 123","Luis",2);
-			Producto Producto_F= new Producto("Puerta","Calle siul 123","Luis",3);
+			Producto Producto_D= new Producto("Retrovisor","Calle siul 123","Luis","Citroen");
+			Producto Producto_E= new Producto("Luna","Calle siul 123","Luis","Audi");
+			Producto Producto_F= new Producto("Puerta","Calle siul 123","Luis","Opel");
 			
 			desguaceRepository.save(desguacePepe);
 			productoRepository.save(Producto_A);
@@ -65,6 +66,38 @@ public class DesguambiosController {
 		@RequestMapping("/")
 		public String webIndex(Model model) {
 			return "index";
+		}
+		
+		
+		
+		//Buscador principal
+		
+		@RequestMapping(value ="/buscadorPrincipal")
+		public String buscadorPrincipal(Model model, @RequestParam String idMarca, @RequestParam String litProducto) {
+			
+			List<Producto> listaProductos = new ArrayList<>();
+						
+			if((!idMarca.isEmpty()) && (!litProducto.isEmpty())){
+				
+			 listaProductos = productoRepository.findByLitProductoAndIdMarca(litProducto, idMarca);
+			
+			}else if((!idMarca.isEmpty()) && (litProducto.isEmpty())){
+				System.out.println("dentro del if litProducto vacio");
+				 listaProductos = productoRepository.findByLitProducto(litProducto);
+			
+			}else if((idMarca.isEmpty())&&(!litProducto.isEmpty())) {
+				System.out.println("dentro del if idMarca vacio");
+
+				 listaProductos = productoRepository.findByIdMarca(idMarca);
+				
+			}else {
+				 listaProductos = productoRepository.findAll(new Sort("idMarca"));
+
+			}
+			
+			model.addAttribute("listaProductos",listaProductos);
+			
+			return "verMisProductos";
 		}
 		
 		/*
@@ -121,8 +154,8 @@ public class DesguambiosController {
 		
 		@RequestMapping(value = "/subirNuevoProducto")
 		public String subirNuevoProducto(Model model,@RequestParam String litProducto,@RequestParam String direccionpropietario,@RequestParam String nombredesguacepropietario,@RequestParam String id_marca) {
-			int nM = Integer.parseInt(id_marca);
-			Producto producto = new Producto ( litProducto,  direccionpropietario,  nombredesguacepropietario,nM);
+			//int nM = Integer.parseInt(id_marca);
+			Producto producto = new Producto ( litProducto,  direccionpropietario,  nombredesguacepropietario,id_marca);
 			productoRepository.save(producto);
 			//listaProductos.add(producto);
 			//listaProductos.add(Producto_A);
@@ -150,8 +183,8 @@ public class DesguambiosController {
 		//Falta por hacer con base de datos
 		@RequestMapping(value = "/subirProductoEditado")
 		public String subirProductoEditado(Model model,@RequestParam String litProducto,@RequestParam String direccionpropietario,@RequestParam String nombredesguacepropietario,@RequestParam String id_marca) {
-			int nM = Integer.parseInt(id_marca);
-			Producto producto = new Producto ( litProducto,  direccionpropietario,  nombredesguacepropietario,nM);
+			//int nM = Integer.parseInt(id_marca);
+			Producto producto = new Producto ( litProducto,  direccionpropietario,  nombredesguacepropietario,id_marca);
 			productoRepository.save(producto);
 			//listaProductos.add(producto);
 			//listaProductos.add(Producto_A);
