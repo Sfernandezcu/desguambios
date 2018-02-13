@@ -24,7 +24,7 @@ import com.dsg.desguambios.repositorios.ProductoRepository;
 public class DesguambiosController {
 		
 		//public ArrayList<Desguace> lista = new ArrayList<>();
-		public ArrayList<Producto> listaProductos = new ArrayList<>();
+		
 		Producto Producto_A= new Producto("a","a","a",1);
 		Producto Producto_B= new Producto("b","b,","b",2);
 		
@@ -37,6 +37,8 @@ public class DesguambiosController {
 		private DesguaceRepository desguaceRepository;
 		@Autowired
 		private ProductoRepository productoRepository;
+		//@Autowired
+		public List<Producto> listaProductos = new ArrayList<>();
 		
 		
 		@PostConstruct
@@ -101,17 +103,20 @@ public class DesguambiosController {
 		
 		@RequestMapping(value = "/subirProducto")
 		public String subirProducto1(Model model) {
+			
 			model.addAttribute("nombredesguacepropietario",instanciaDesguace.getUsuario());
-			model.addAttribute("nombredireccionpropietario",instanciaDesguace.getDireccion());
+			model.addAttribute("direccionpropietario",instanciaDesguace.getDireccion());
 			return "subirProducto";
 		}
 		
 		@RequestMapping(value = "/subirNuevoProducto")
-		public String subirNuevoProducto(Model model,@RequestParam String lit_producto,@RequestParam String dir_empresa,@RequestParam String usuario,@RequestParam String id_marca) {
+		public String subirNuevoProducto(Model model,@RequestParam String lit_producto,@RequestParam String direccionpropietario,@RequestParam String nombredesguacepropietario,@RequestParam String id_marca) {
 			int nM = Integer.parseInt(id_marca);
-			Producto Producto = new Producto ( lit_producto,  dir_empresa,  usuario,nM);
-			listaProductos.add(Producto);
-			listaProductos.add(Producto_A);
+			Producto producto = new Producto ( lit_producto,  direccionpropietario,  nombredesguacepropietario,nM);
+			productoRepository.save(producto);
+			//listaProductos.add(producto);
+			//listaProductos.add(Producto_A);
+			List<Producto> listaProductos=productoRepository.findAll();
 			model.addAttribute("listaProductos",listaProductos);
 			return "verMisProductos";
 		}
