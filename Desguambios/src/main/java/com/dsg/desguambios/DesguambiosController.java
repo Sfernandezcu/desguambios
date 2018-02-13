@@ -110,9 +110,9 @@ public class DesguambiosController {
 		}
 		
 		@RequestMapping(value = "/subirNuevoProducto")
-		public String subirNuevoProducto(Model model,@RequestParam String lit_producto,@RequestParam String direccionpropietario,@RequestParam String nombredesguacepropietario,@RequestParam String id_marca) {
+		public String subirNuevoProducto(Model model,@RequestParam String litProducto,@RequestParam String direccionpropietario,@RequestParam String nombredesguacepropietario,@RequestParam String id_marca) {
 			int nM = Integer.parseInt(id_marca);
-			Producto producto = new Producto ( lit_producto,  direccionpropietario,  nombredesguacepropietario,nM);
+			Producto producto = new Producto ( litProducto,  direccionpropietario,  nombredesguacepropietario,nM);
 			productoRepository.save(producto);
 			//listaProductos.add(producto);
 			//listaProductos.add(Producto_A);
@@ -137,17 +137,17 @@ public class DesguambiosController {
 			return "buscadorEditarProducto";
 		}
 		
-		
+		//Falta por hacer con base de datos
 		@RequestMapping(value = "/subirProductoEditado")
-		public String subirProductoEditado(Model model,@RequestParam String lit_producto,@RequestParam String dir_empresa,@RequestParam String usuario,@RequestParam String id_marca) {
+		public String subirProductoEditado(Model model,@RequestParam String litProducto,@RequestParam String dir_empresa,@RequestParam String usuario,@RequestParam String id_marca) {
 			int nM = Integer.parseInt(id_marca);
-			Producto Producto = new Producto ( lit_producto,  dir_empresa,  usuario,nM);
+			Producto Producto = new Producto ( litProducto,  dir_empresa,  usuario,nM);
 			listaProductos.add(Producto);
 			model.addAttribute("listaProductos",listaProductos);
 			return "verMisProductos";
 		}
 		
-		
+		//Falta por hacer con base de datos
 		public Producto buscarP(String idProducto) {
 			Producto p= new Producto();
 			for(Producto producto : listaProductos) {
@@ -158,15 +158,14 @@ public class DesguambiosController {
 			}
 			return p;
 		}
-		
+		//Hecho con base de datos, falta por informar al usuario el identificador de la pieza que esta subiendo
 		@RequestMapping(value = "/datosEditarProducto")
-		public String datosEditarProducto(Model model,@RequestParam String idProducto) {
+		public String datosEditarProducto(Model model,@RequestParam Long idProducto) {
 			
-			
-			Producto producto;
-			producto = buscarP(idProducto);
-			System.out.println(producto.toString());
-			model.addAttribute("lit_producto",producto.getLitProducto());
+			//Producto producto;
+			//producto = buscarP(idProducto);
+			Producto producto=productoRepository.findByIdProducto(idProducto);
+			model.addAttribute("litProducto",producto.getLitProducto());
 			model.addAttribute("id_marca",producto.getIdMarca());
 			model.addAttribute("nombredesguacepropietario",producto.getUsuario());
 			model.addAttribute("nombredireccionpropietario",producto.getDirEmpresa());
@@ -180,7 +179,6 @@ public class DesguambiosController {
 		 public String registro(Model model,@RequestParam String alta, String usuario,String email,
 				  String direccion,  String password,  String valPassword) {
 			
-		
 			if(Integer.parseInt(alta)==1) {
 				Desguace instanciaDesguace = new Desguace(usuario,email,direccion,password,valPassword);
 				desguaceRepository.save(instanciaDesguace);

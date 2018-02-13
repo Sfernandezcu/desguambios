@@ -11,8 +11,8 @@ import com.dsg.desguambios.entidades.Producto;
 
 public interface ProductoRepository extends JpaRepository<Producto, Long> {
 	
-	Producto findByIdProducto (String idProducto);
-	//Producto findByLit_producto (String lit_producto);
+	Producto findByIdProducto (Long idProducto);
+	Producto findByLitProducto (String litProducto);
 	//Producto findByDir_empresa (String dir_empresa);
 	List<Producto> findByUsuario (String usuario);
 	//Producto findById_marca (String id_marca);

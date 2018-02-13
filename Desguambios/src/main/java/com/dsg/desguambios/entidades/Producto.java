@@ -13,15 +13,15 @@ public class Producto {
 	private long idProducto;
 	
 	
-	private String lit_producto;
+	private String litProducto;
 	private String dir_empresa;
 	private String usuario;
 	private int id_marca;
 
 	public Producto () {}
 	
-	public Producto (String lit_producto, String dir_empresa, String usuario, Integer id_marca) {
-		this.lit_producto=lit_producto;
+	public Producto (String litProducto, String dir_empresa, String usuario, Integer id_marca) {
+		this.litProducto=litProducto;
 		this.dir_empresa=dir_empresa;
 		this.usuario=usuario;
 		this.id_marca=id_marca;
@@ -29,12 +29,12 @@ public class Producto {
 	
 	
 	public String getLitProducto () {
-		return lit_producto;
+		return litProducto;
 		
 	}
 	
-	public void setLitProducto (String lit_producto) {
-		this.lit_producto = lit_producto;
+	public void setLitProducto (String litProducto) {
+		this.litProducto = litProducto;
 	}
 	
 	public String getDirEmpresa () {
@@ -65,7 +65,7 @@ public class Producto {
 
 	@Override
 	public String toString() {
-		return "Producto [id_producto=" + idProducto + ", lit_producto=" + lit_producto + ", dir_empresa="
+		return "Producto [id_producto=" + idProducto + ", litProducto=" + litProducto + ", dir_empresa="
 				+ dir_empresa + ", usuario=" + usuario + ", id_marca=" + id_marca + "]";
 	}
 	
