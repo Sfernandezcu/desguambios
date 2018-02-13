@@ -4,17 +4,19 @@
 <meta charset="UTF-8">
 <title>Mis productos</title>
 <h1>Aquí están todos sus productos</h1>
-<table>
+<ul>
 		{{#listaProductos}}
    		<tr>
-   			<td><button id='add-button'>Add</button></td>
+   			
         	<td>{{-index}}</td>
         	<td>{{.}}</td>
       	</tr>
       	{{/listaProductos}}	
-   	</table>
+ </ul>
 </head>
 <body>
-
+<a href="/">Volver a Inicio</a>
+<p></p>
+<a href="/subirEliminarEditar.html">Suba, edite y elimine sus productos</a>
 </body>
 </html>

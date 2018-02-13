@@ -116,14 +116,16 @@ public class DesguambiosController {
 			productoRepository.save(producto);
 			//listaProductos.add(producto);
 			//listaProductos.add(Producto_A);
-			List<Producto> listaProductos=productoRepository.findAll();
+			String usuario=instanciaDesguace.getUsuario();
+			List<Producto> listaProductos=(List<Producto>) productoRepository.findByUsuario(usuario);
 			model.addAttribute("listaProductos",listaProductos);
 			return "verMisProductos";
 		}
 		
 		@RequestMapping(value = "/verMisProductos")
 		public String verMisProducto(Model model) {
-
+			String usuario=instanciaDesguace.getUsuario();
+			List<Producto> listaProductos=(List<Producto>) productoRepository.findByUsuario(usuario);
 			model.addAttribute("listaProductos",listaProductos);
 			return "verMisProductos";
 		}

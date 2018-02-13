@@ -2,6 +2,8 @@
 
 package com.dsg.desguambios.repositorios;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 
 
@@ -12,7 +14,7 @@ public interface ProductoRepository extends JpaRepository<Producto, Long> {
 	Producto findByIdProducto (String idProducto);
 	//Producto findByLit_producto (String lit_producto);
 	//Producto findByDir_empresa (String dir_empresa);
-	Producto findByUsuario (String usuario);
+	List<Producto> findByUsuario (String usuario);
 	//Producto findById_marca (String id_marca);
 	
 }
