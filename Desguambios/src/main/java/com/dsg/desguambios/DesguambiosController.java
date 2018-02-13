@@ -139,14 +139,10 @@ public class DesguambiosController {
 		
 		//Falta por hacer con base de datos
 		@RequestMapping(value = "/subirProductoEditado")
-		public String subirProductoEditado(Model model,@RequestParam String litProducto,@RequestParam String direccionpropietario,@RequestParam String nombredesguacepropietario,@RequestParam String id_marca) {
+		public String subirProductoEditado(Model model,@RequestParam String litProducto,@RequestParam String dir_empresa,@RequestParam String usuario,@RequestParam String id_marca) {
 			int nM = Integer.parseInt(id_marca);
-			Producto producto = new Producto ( litProducto,  direccionpropietario,  nombredesguacepropietario,nM);
-			productoRepository.save(producto);
-			//listaProductos.add(producto);
-			//listaProductos.add(Producto_A);
-			String usuario=instanciaDesguace.getUsuario();
-			List<Producto> listaProductos=(List<Producto>) productoRepository.findByUsuario(usuario);
+			Producto Producto = new Producto ( litProducto,  dir_empresa,  usuario,nM);
+			listaProductos.add(Producto);
 			model.addAttribute("listaProductos",listaProductos);
 			return "verMisProductos";
 		}
@@ -172,9 +168,8 @@ public class DesguambiosController {
 			model.addAttribute("litProducto",producto.getLitProducto());
 			model.addAttribute("id_marca",producto.getIdMarca());
 			model.addAttribute("nombredesguacepropietario",producto.getUsuario());
-			model.addAttribute("direccionpropietario",producto.getDirEmpresa());
-			//listaProductos.remove(producto);
-			productoRepository.delete(producto);
+			model.addAttribute("nombredireccionpropietario",producto.getDirEmpresa());
+			listaProductos.remove(producto);
 			return "editarProducto";
 		}
 		
