@@ -79,16 +79,16 @@ public class DesguambiosController {
 						
 			if((!idMarca.isEmpty()) && (!litProducto.isEmpty())){
 				
-			 listaProductos = productoRepository.findByLitProductoAndIdMarca(litProducto, idMarca);
+			 listaProductos = productoRepository.findByLitProductoContainingIgnoreCaseAndIdMarcaContainingIgnoreCase(litProducto, idMarca);
 			
 			}else if((!idMarca.isEmpty()) && (litProducto.isEmpty())){
-				System.out.println("dentro del if litProducto vacio");
-				 listaProductos = productoRepository.findByLitProducto(litProducto);
-			
+				 
+				 listaProductos = productoRepository.findByIdMarcaIgnoreCase(idMarca);
+				 
 			}else if((idMarca.isEmpty())&&(!litProducto.isEmpty())) {
-				System.out.println("dentro del if idMarca vacio");
-
-				 listaProductos = productoRepository.findByIdMarca(idMarca);
+				
+				listaProductos = productoRepository.findByLitProductoIgnoreCase(litProducto);
+				 
 				
 			}else {
 				 listaProductos = productoRepository.findAll(new Sort("idMarca"));
