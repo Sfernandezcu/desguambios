@@ -37,10 +37,10 @@ public class DesguambiosController {
 		
 		@PostConstruct
 		public void init() {
-			Desguace desguacePepe = new Desguace("Pepe","pepe@gmail.com","Calle Falsa 123","pepe","pepe");
-			Producto Producto_A= new Producto("Retrovisor","Calle Falsa 123","Pepe",1);
-			Producto Producto_B= new Producto("Luna","Calle Falsa 123","Pepe",2);
-			Producto Producto_C= new Producto("Puerta","Calle Falsa 123","Pepe",3);
+			Desguace desguacePepe = new Desguace("Pepe","pepe@gmail.com","Calle epep 123","pepe","pepe");
+			Producto Producto_A= new Producto("Retrovisor","Calle epep 123","Pepe",1);
+			Producto Producto_B= new Producto("Luna","Calle epep 123","Pepe",2);
+			Producto Producto_C= new Producto("Puerta","Calle epep 123","Pepe",3);
 			
 			Desguace desguaceLuis = new Desguace("Luis","pepe@gmail.com","Calle siul 123","luis","luis");
 			Producto Producto_D= new Producto("Retrovisor","Calle siul 123","Luis",1);
