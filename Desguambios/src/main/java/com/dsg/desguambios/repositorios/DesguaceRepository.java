@@ -11,9 +11,9 @@ import com.dsg.desguambios.entidades.Desguace;
 public interface DesguaceRepository extends JpaRepository<Desguace, String> {
 	
 	Desguace findByUsuario(String usuario);
-	List<Desguace> findByDireccion(String direccion);
-	List<Desguace> findByEmail(String email);
-	List<Desguace> findByPassword(String password);
-	List<Desguace> findByValPassword(String valPassword);
+	Desguace findByDireccion(String direccion);
+	Desguace findByEmail(String email);
+	Desguace findByPassword(String password);
+	Desguace findByValPassword(String valPassword);
 	
 }
