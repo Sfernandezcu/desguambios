@@ -13,7 +13,6 @@ public class Imagen {
 //	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long idImagen;
 	
-	
 
 	private String url;
 	private int id_producto;
