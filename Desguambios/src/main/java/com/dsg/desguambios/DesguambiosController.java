@@ -40,12 +40,12 @@ public class DesguambiosController {
 			Desguace desguacePepe = new Desguace("Pepe","pepe@gmail.com","Calle Falsa 123","pepe","pepe");
 			Producto Producto_A= new Producto("Retrovisor","Calle Falsa 123","Pepe",1);
 			Producto Producto_B= new Producto("Luna","Calle Falsa 123","Pepe",2);
-			Producto Producto_C= new Producto("Puerta","Calle Falsa 123","Pepe",2);
+			Producto Producto_C= new Producto("Puerta","Calle Falsa 123","Pepe",3);
 			
 			Desguace desguaceLuis = new Desguace("Luis","pepe@gmail.com","Calle siul 123","luis","luis");
 			Producto Producto_D= new Producto("Retrovisor","Calle siul 123","Luis",1);
 			Producto Producto_E= new Producto("Luna","Calle siul 123","Luis",2);
-			Producto Producto_F= new Producto("Puerta","Calle siul 123","Luis",2);
+			Producto Producto_F= new Producto("Puerta","Calle siul 123","Luis",3);
 			
 			desguaceRepository.save(desguacePepe);
 			productoRepository.save(Producto_A);
