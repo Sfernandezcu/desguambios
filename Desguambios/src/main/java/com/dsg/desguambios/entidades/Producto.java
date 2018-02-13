@@ -14,17 +14,17 @@ public class Producto {
 	
 	
 	private String litProducto;
-	private String dir_empresa;
+	private String dirEmpresa;
 	private String usuario;
-	private int id_marca;
+	private int idMarca;
 
 	public Producto () {}
 	
 	public Producto (String litProducto, String dir_empresa, String usuario, Integer id_marca) {
 		this.litProducto=litProducto;
-		this.dir_empresa=dir_empresa;
+		this.dirEmpresa=dir_empresa;
 		this.usuario=usuario;
-		this.id_marca=id_marca;
+		this.idMarca=id_marca;
 	}
 	
 	
@@ -38,11 +38,11 @@ public class Producto {
 	}
 	
 	public String getDirEmpresa () {
-		return dir_empresa;
+		return dirEmpresa;
 	}
 	
 	public void setDirEmpresa (String dir_empresa) {
-		this.dir_empresa = dir_empresa;
+		this.dirEmpresa = dir_empresa;
 	}
 	
 	public String getUsuario () {
@@ -54,11 +54,11 @@ public class Producto {
 	}
 	
 	public Integer getIdMarca () {
-		return id_marca;
+		return idMarca;
 	}
 	
 	public void setIdMarca (Integer id_marca) {
-		this.id_marca = id_marca;
+		this.idMarca = id_marca;
 	}
 	
 	
@@ -66,7 +66,7 @@ public class Producto {
 	@Override
 	public String toString() {
 		return "Producto [id_producto=" + idProducto + ", litProducto=" + litProducto + ", dir_empresa="
-				+ dir_empresa + ", usuario=" + usuario + ", id_marca=" + id_marca + "]";
+				+ dirEmpresa + ", usuario=" + usuario + ", id_marca=" + idMarca + "]";
 	}
 	
 	
