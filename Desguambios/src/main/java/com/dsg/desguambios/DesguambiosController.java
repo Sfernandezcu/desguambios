@@ -71,11 +71,8 @@ public class DesguambiosController {
 		
 		@RequestMapping("/datosAlHacerLogin")
 		public String datosAlHacerLogin(Model model,@RequestParam String usuario,@RequestParam String password){
-			//Desguace user = new Desguace();
-			List<Desguace>lista =desguaceRepository.findByUsuario(usuario);
-			
-			if(lista.get(0).getUsuario().equals(usuario)&& lista.get(0).getPassword().equals(password)) {
-				
+			instanciaDesguace =desguaceRepository.findByUsuario(usuario);
+			if(instanciaDesguace.getUsuario().equals(usuario)&& instanciaDesguace.getPassword().equals(password)) {
 				return "subirEliminarEditar";
 			}else {
 				return "index";
@@ -104,8 +101,8 @@ public class DesguambiosController {
 		
 		@RequestMapping(value = "/subirProducto")
 		public String subirProducto1(Model model) {
-			model.addAttribute("nombredesguacepropietario",desguacePepe.getUsuario());
-			model.addAttribute("nombredireccionpropietario",desguacePepe.getDireccion());
+			model.addAttribute("nombredesguacepropietario",instanciaDesguace.getUsuario());
+			model.addAttribute("nombredireccionpropietario",instanciaDesguace.getDireccion());
 			return "subirProducto";
 		}
 		
@@ -178,14 +175,10 @@ public class DesguambiosController {
 			
 		
 			if(Integer.parseInt(alta)==1) {
-				Desguace desguace = new Desguace(usuario,email,direccion,password,valPassword);
-				Desguace desguace1 = new Desguace("guiulle","guiulle","guiulle","guiulle","guiulle");
-	
-				//lista.add(desguace); Sin meter en repository 
+				Desguace instanciaDesguace = new Desguace(usuario,email,direccion,password,valPassword);
+				desguaceRepository.save(instanciaDesguace);
+				//lista.add(desguace);
 				//lista.add(desguace1);
-	
-				
-				
 				model.addAttribute("mensaje", true);
 				
 			} else {
