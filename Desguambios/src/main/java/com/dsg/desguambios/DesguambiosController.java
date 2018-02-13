@@ -97,7 +97,7 @@ public class DesguambiosController {
 			
 			model.addAttribute("listaProductos",listaProductos);
 			
-			return "verMisProductos";
+			return "resultadoBuscador";
 		}
 		
 		/*
