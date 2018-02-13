@@ -199,6 +199,25 @@ public class DesguambiosController {
 				 
 			 
 		 } 
+		 
+		 @RequestMapping(value = "/eliminarProducto")
+			public String vistaEliminarProducto(Model model) {
+				
+				return "buscadorEliminarProducto";
+			}
+		 
+		 
+		 
+			@RequestMapping(value = "/datosEliminarProducto")
+			public String datosEliminarProducto(Model model,@RequestParam Long idProducto) {
+				
+				//Producto producto;
+				//producto = buscarP(idProducto);
+				Producto producto=productoRepository.findByIdProducto(idProducto);
+				//listaProductos.remove(producto);
+				productoRepository.delete(producto);
+				return "verMisProductos";
+			}
 		 /*
 		 @RequestMapping(value = "/prueba")
 		 public String registro(Model model) {
