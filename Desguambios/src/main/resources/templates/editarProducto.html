@@ -5,15 +5,15 @@
 <title>Rellene los campos de la pieza que quiere subir</title>
 </head>
 <body>
-	<form action="/subirNuevoProducto">
+	<form action="/subirProductoEditado">
 		<p>Nombre literal Del Producto:
 	<input  name="litProducto" type="text" placeholder="litProducto" value={{litProducto}}></p>
 	<p>idDeLaMarca:
 	<input  name="id_marca" type="text" placeholder="id_marca" value={{id_marca}}></p>
 	<p>desguacepropietario:
-	<input  name="usuario" type="text" placeholder="desguacepropietario" value="{{nombredesguacepropietario}}"></p>
+	<input  name="nombredesguacepropietario" type="text" placeholder="nombredesguacepropietario" value="{{nombredesguacepropietario}}"></p>
 	<p>direccionDelDesguace:
-	<input  name="dir_empresa" type="text" placeholder="direccionDelDesguace" value="{{nombredireccionpropietario}}"></p>
+	<input  name="direccionpropietario" type="text" placeholder="direccionpropietario" value="{{direccionpropietario}}"></p>
 	
 	<input  name="alta" type="hidden" value="1">
 	<input  type="submit" value="Subir Producto">
