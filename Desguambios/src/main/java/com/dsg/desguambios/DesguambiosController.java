@@ -214,6 +214,7 @@ public class DesguambiosController {
 			//Producto producto;
 			//producto = buscarP(idProducto);
 			Producto producto=productoRepository.findByIdProducto(idProducto);
+			if(producto!=null) {
 			model.addAttribute("litProducto",producto.getLitProducto());
 			model.addAttribute("id_marca",producto.getIdMarca());
 			model.addAttribute("nombredesguacepropietario",producto.getUsuario());
@@ -221,6 +222,10 @@ public class DesguambiosController {
 			//listaProductos.remove(producto);
 			productoRepository.delete(producto);
 			return "editarProducto";
+			}
+			else {
+				return vistaEditarProducto(model);
+			}
 		}
 		
 		
@@ -272,6 +277,28 @@ public class DesguambiosController {
 				
 			
 			}
+			
+			/**
+			@RequestMapping(value = "/añadirComentario")
+			public String add(Model model,@RequestParam Long idProducto) {
+				
+				//Producto producto;
+				//producto = buscarP(idProducto);
+				Producto producto=productoRepository.findByIdProducto(idProducto);
+				//listaProductos.remove(producto);
+				if(producto!=null) {
+					productoRepository.delete(producto);
+					System.out.println("La pieza con idproducto " +idProducto+ " se ha eliminado");
+					return vistaEliminarProducto(model);
+				}
+				else {
+					System.out.println("No hay una pieza con el idproducto=" +idProducto );
+					return vistaEliminarProducto(model);
+				}
+				
+			
+			}
+			**/
 				/*
 		 @RequestMapping(value = "/prueba")
 		 public String registro(Model model) {
