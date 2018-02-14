@@ -1,5 +1,7 @@
 package com.dsg.desguambios;
 
+import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -258,10 +260,19 @@ public class DesguambiosController {
 				//producto = buscarP(idProducto);
 				Producto producto=productoRepository.findByIdProducto(idProducto);
 				//listaProductos.remove(producto);
-				productoRepository.delete(producto);
-				return "verMisProductos";
+				if(producto!=null) {
+					productoRepository.delete(producto);
+					System.out.println("La pieza con idproducto " +idProducto+ " se ha eliminado");
+					return vistaEliminarProducto(model);
+				}
+				else {
+					System.out.println("No hay una pieza con el idproducto=" +idProducto );
+					return vistaEliminarProducto(model);
+				}
+				
+			
 			}
-		 /*
+				/*
 		 @RequestMapping(value = "/prueba")
 		 public String registro(Model model) {
 			
