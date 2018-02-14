@@ -9,7 +9,7 @@ import com.dsg.desguambios.entidades.Imagen;
 
 
 public interface ImagenRepository extends JpaRepository<Imagen, Long> {
-	Imagen findByidImagen(long idImagen);
+	Imagen findByIdImagen(long idImagen);
 	List<Imagen> findByIdProducto(long idProducto);
 	List<Imagen> findByUrl (String url);
 
