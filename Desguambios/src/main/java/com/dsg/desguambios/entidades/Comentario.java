@@ -33,15 +33,6 @@ public class Comentario {
 	}
 
 
-	public long getIdComentario() {
-		return idComentario;
-	}
-
-
-	public void setIdComentario(long idComentario) {
-		this.idComentario = idComentario;
-	}
-
 
 	@Override
 	public String toString() {

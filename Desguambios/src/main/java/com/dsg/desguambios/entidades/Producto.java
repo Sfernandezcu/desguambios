@@ -30,25 +30,14 @@ public class Producto {
 	private Comentario comentario;
 	
 	
-	public Producto(long idProducto, String litProducto, String dirEmpresa, String usuario, String idMarca,
-			List<Imagen> imagenes, Comentario comentario) {
-		super();
-		this.idProducto = idProducto;
+	public Producto( String litProducto, String dirEmpresa, String usuario, String idMarca, Comentario comentario) {
 		this.litProducto = litProducto;
 		this.dirEmpresa = dirEmpresa;
 		this.usuario = usuario;
 		this.idMarca = idMarca;
-		Imagenes = imagenes;
 		this.comentario = comentario;
 	}
 
-	public long getIdProducto() {
-		return idProducto;
-	}
-
-	public void setIdProducto(long idProducto) {
-		this.idProducto = idProducto;
-	}
 
 	public Comentario getComentario() {
 		return comentario;

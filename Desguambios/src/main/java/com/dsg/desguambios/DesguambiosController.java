@@ -39,19 +39,22 @@ public class DesguambiosController {
 		private ProductoRepository productoRepository;
 		//@Autowired
 		public List<Producto> listaProductos = new ArrayList<>();
-		
-		
+		@Autowired
+		private ComentarioRepository comentarioRepository;
+
+		/**
 		@PostConstruct
 		public void init() {
+			Comentario comentario = new Comentario("Hola");
 			Desguace desguacePepe = new Desguace("Pepe","pepe@gmail.com","Calle epep 123","pepe","pepe");
-			Producto Producto_A= new Producto("Retrovisor","Calle epep 123","Pepe","Bmw");
-			Producto Producto_B= new Producto("Luna","Calle epep 123","Pepe","Mercedes");
-			Producto Producto_C= new Producto("Puerta","Calle epep 123","Pepe","Renault");
+			Producto Producto_A= new Producto("Retrovisor","Calle epep 123","Pepe","Bmw",comentario);
+			Producto Producto_B= new Producto("Luna","Calle epep 123","Pepe","Mercedes",comentario);
+			Producto Producto_C= new Producto("Puerta","Calle epep 123","Pepe","Renault",comentario);
 			
 			Desguace desguaceLuis = new Desguace("Luis","pepe@gmail.com","Calle siul 123","luis","luis");
-			Producto Producto_D= new Producto("Retrovisor","Calle siul 123","Luis","Citroen");
-			Producto Producto_E= new Producto("Luna","Calle siul 123","Luis","Audi");
-			Producto Producto_F= new Producto("Puerta","Calle siul 123","Luis","Opel");
+			Producto Producto_D= new Producto("Retrovisor","Calle siul 123","Luis","Citroen",comentario);
+			Producto Producto_E= new Producto("Luna","Calle siul 123","Luis","Audi",comentario);
+			Producto Producto_F= new Producto("Puerta","Calle siul 123","Luis","Opel",comentario);
 			
 			desguaceRepository.save(desguacePepe);
 			productoRepository.save(Producto_A);
@@ -67,7 +70,7 @@ public class DesguambiosController {
 			//listaProductos.add(Producto_B);
 			//lista.add(desguacePepe);
 		}
-		
+		**/
 		@RequestMapping("/")
 		public String webIndex(Model model) {
 			return "index";
@@ -158,9 +161,11 @@ public class DesguambiosController {
 		}
 		
 		@RequestMapping(value = "/subirNuevoProducto")
-		public String subirNuevoProducto(Model model,@RequestParam String litProducto,@RequestParam String direccionpropietario,@RequestParam String nombredesguacepropietario,@RequestParam String id_marca) {
+		public String subirNuevoProducto(Model model,@RequestParam String litProducto,@RequestParam String direccionpropietario,@RequestParam String nombredesguacepropietario,@RequestParam String id_marca,@RequestParam String contenido) {
 			//int nM = Integer.parseInt(id_marca);
-			Producto producto = new Producto ( litProducto,  direccionpropietario,  nombredesguacepropietario,id_marca);
+			Comentario comentario = new Comentario (contenido);
+			comentarioRepository.save(comentario);
+			Producto producto = new Producto (litProducto, direccionpropietario,  nombredesguacepropietario,id_marca,comentario);
 			productoRepository.save(producto);
 			//listaProductos.add(producto);
 			//listaProductos.add(Producto_A);
@@ -168,7 +173,10 @@ public class DesguambiosController {
 			List<Producto> listaProductos=(List<Producto>) productoRepository.findByUsuario(usuario);
 			model.addAttribute("listaProductos",listaProductos);
 			return "verMisProductos";
+	
 		}
+		
+		
 		
 		@RequestMapping(value = "/verMisProductos")
 		public String verMisProducto(Model model) {
@@ -186,12 +194,12 @@ public class DesguambiosController {
 		}
 		
 		//Falta por hacer con base de datos
-		@RequestMapping(value = "/subirNuevoProducto")
-		public String subirNuevoProducto(Model model,@RequestParam String litProducto,@RequestParam String direccionpropietario,@RequestParam String nombredesguacepropietario,@RequestParam String id_marca,@RequestParam String contenido) {
+		@RequestMapping(value = "/subirProductoEditado")
+		public String subirProductoEditado(Model model,@RequestParam String litProducto,@RequestParam String direccionpropietario,@RequestParam String nombredesguacepropietario,@RequestParam String id_marca,@RequestParam String contenido) {
 			//int nM = Integer.parseInt(id_marca);
 			Comentario comentario = new Comentario (contenido);
-			ComentarioRepository.save(comentario);
-			Producto producto = new Producto (litProducto,  direccionpropietario,  nombredesguacepropietario,id_marca, comentario);
+			comentarioRepository.save(comentario);
+			Producto producto = new Producto ( litProducto,  direccionpropietario,  nombredesguacepropietario,id_marca, comentario);
 			productoRepository.save(producto);
 			//listaProductos.add(producto);
 			//listaProductos.add(Producto_A);
@@ -199,6 +207,7 @@ public class DesguambiosController {
 			List<Producto> listaProductos=(List<Producto>) productoRepository.findByUsuario(usuario);
 			model.addAttribute("listaProductos",listaProductos);
 			return "verMisProductos";
+		}
 		
 		//Falta por hacer con base de datos
 		public Producto buscarP(String idProducto) {
@@ -223,6 +232,7 @@ public class DesguambiosController {
 			model.addAttribute("id_marca",producto.getIdMarca());
 			model.addAttribute("nombredesguacepropietario",producto.getUsuario());
 			model.addAttribute("direccionpropietario",producto.getDirEmpresa());
+			model.addAttribute("contenido",producto.getComentario());
 			//listaProductos.remove(producto);
 			productoRepository.delete(producto);
 			return "editarProducto";
@@ -281,17 +291,14 @@ public class DesguambiosController {
 				
 			
 			}
-			
-			
 			/**
-			
 			@RequestMapping(value = "/comentario")
 			public String comentario(Model model) {
 				
 				return "crearComentario";
 			}
 			
-			/**
+			
 			@RequestMapping(value = "/subirNuevoComentario")
 			public String subirNuevoComentario(Model model,@RequestParam String contenido) {
 				Comentario comentario = new Comentario (contenido);
@@ -299,11 +306,9 @@ public class DesguambiosController {
 				String producto=instanciaProducto.getidProducto();
 				Producto Prudcto= ProductoRepository.findByComentario(comentario);
 				model.addAttribute("listaComentarios",listaComentarios);
-				return "subirProducto";
+				return "verMisProductos";
 		
 			}
-			
-			**/
 				/*
 		 @RequestMapping(value = "/prueba")
 		 public String registro(Model model) {
