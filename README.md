@@ -32,7 +32,7 @@ Buscador de piezas de desguace donde añades la pieza que deseas, y aparecen los
 - PDF: El usuario puede crear un pdf donde le aparezcan las piezas que busca, con su información correspondiente (Desguace,antigüedad de la pieza, estado de la pieza).
 
 # FASE2
-#DIAGRAMA DE NAVEGACION
+- DIAGRAMA DE NAVEGACION
 
  ![Texto alternativo](https://github.com/di3guez/desguambios/blob/master/Desguambios/src/main/resources/static/diagramaNavegacion.jpg)
  
@@ -53,19 +53,19 @@ Buscador de piezas de desguace donde añades la pieza que deseas, y aparecen los
 - LOGIN
 ![Texto alternativo](https://github.com/di3guez/desguambios/blob/master/Desguambios/src/main/resources/static/Login.PNG)
 
-- SUBIR/ELIMINAR/EDITAR
+- SUBIR/ELIMINAR/EDITAR/VER
 ![Texto alternativo](https://github.com/di3guez/desguambios/blob/master/Desguambios/src/main/resources/static/SubirEliminarEditar.PNG)
 
 - SUBIR PRODUCTO
 ![Texto alternativo](https://github.com/di3guez/desguambios/blob/master/Desguambios/src/main/resources/static/SubirNuevoProducto.PNG)
 
-- BUSCAR QUE PRODUCTO EDITAR
-![Texto alternativo]()
+- LOGIN
+![Texto alternativo](https://github.com/di3guez/desguambios/blob/master/Desguambios/src/main/resources/static/Login.PNG)
 
-- ELIMINAR PRODUCTO
-![Texto alternativo](https://github.com/di3guez/desguambios/blob/master/Desguambios/src/main/resources/static/EliminarProductoPorId.PNG)
+- LOGIN
+![Texto alternativo](https://github.com/di3guez/desguambios/blob/master/Desguambios/src/main/resources/static/Login.PNG)
 
-- PRODUCTOS DEL DESGUACE.
+- PRODUCTOS DEL DESGUACE
 ![Texto alternativo](https://github.com/di3guez/desguambios/blob/master/Desguambios/src/main/resources/static/ProductosDeUnDesguace.PNG)
 
 
