@@ -4,24 +4,28 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
-//@Entity
+	@Entity
 public class Imagen {
 
 	
-//	@Id
-//	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long idImagen;
 	
 
 	private String url;
-	private int id_producto;
+	private long idProducto;
+	
+	@ManyToOne
+	private Producto producto;
 	
 	protected Imagen () {}
 	
-	public Imagen (String url, Integer id_producto) {
+	public Imagen (String url, Long idProducto) {
 		this.url = url;
-		this.id_producto = id_producto;
+		this.idProducto = idProducto;
 	}
 	
 	
@@ -35,16 +39,16 @@ public class Imagen {
 	
 	
 	public long getIdProducto () {
-		return id_producto;
+		return idProducto;
 	}
 	
-	public void setIdProducto (Integer id_producto) {
-		this.id_producto = id_producto;
+	public void setIdProducto (Integer idProducto) {
+		this.idProducto = idProducto;
 	}
 
 	@Override
 	public String toString() {
-		return "Imagen [id_imagen=" + idImagen + ", url=" + url + ", id_producto=" + id_producto + "]";
+		return "Imagen [id_imagen=" + idImagen + ", url=" + url + ", idProducto=" + idProducto + "]";
 	}
 	
 	
