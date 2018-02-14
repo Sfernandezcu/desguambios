@@ -87,15 +87,25 @@ public class DesguambiosController {
 			
 			
 			Desguace desguacePepe = new Desguace("Pepe","pepe@gmail.com","Calle epep 123","pepe","pepe");
+			Producto Producto_A= new Producto("Retrovisor","Calle epep 123","Pepe","Bmw");
+			Producto Producto_B= new Producto("Luna","Calle epep 123","Pepe","Mercedes");
+			Producto Producto_C= new Producto("Puerta","Calle epep 123","Pepe","Renault");
 			
 			Desguace desguaceLuis = new Desguace("Luis","pepe@gmail.com","Calle siul 123","luis","luis");
-	
+			Producto Producto_D= new Producto("Retrovisor","Calle siul 123","Luis","Citroen");
+			Producto Producto_E= new Producto("Luna","Calle siul 123","Luis","Audi");
+			Producto Producto_F= new Producto("Puerta","Calle siul 123","Luis","Opel");
 			
 			desguaceRepository.save(desguacePepe);
-		
+			productoRepository.save(Producto_A);
+			productoRepository.save(Producto_B);
+			productoRepository.save(Producto_C);
 			
 			desguaceRepository.save(desguaceLuis);
-		
+			productoRepository.save(Producto_D);
+			productoRepository.save(Producto_E);
+			productoRepository.save(Producto_F);
+			
 			//listaFavoritos.add(Producto_A);
 			//listaProductos.add(Producto_A);
 			//listaProductos.add(Producto_B);
