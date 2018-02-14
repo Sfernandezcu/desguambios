@@ -15,7 +15,7 @@ public class Comentario {
 	
 	private String contenido;
 	
-	protected Comentario () {}
+	public Comentario () {}
 	
 	
 	public Comentario (String contenido) {
