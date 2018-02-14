@@ -13,4 +13,5 @@ public interface ImagenRepository extends JpaRepository<Imagen, Long> {
 	List<Imagen> findByIdProducto(long idProducto);
 	List<Imagen> findByUrl (String url);
 
+	
 }
