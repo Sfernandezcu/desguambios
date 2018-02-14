@@ -65,7 +65,7 @@ Buscador de piezas de desguace donde añades la pieza que deseas, y aparecen los
 - ELIMINAR PRODUCTO
 ![Texto alternativo](https://github.com/di3guez/desguambios/blob/master/Desguambios/src/main/resources/static/EliminarProductoPorId.PNG)
 
-- PRODUCTOS DEL DESGUACE
+- PRODUCTOS DEL DESGUACE.
 ![Texto alternativo](https://github.com/di3guez/desguambios/blob/master/Desguambios/src/main/resources/static/ProductosDeUnDesguace.PNG)
 
 
