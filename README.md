@@ -30,3 +30,9 @@ Buscador de piezas de desguace donde añades la pieza que deseas, y aparecen los
 # SERVICIO INTERNO
 - Correo: Si un usuario busca una pieza y no existe, todos los desguaces reciben un correo informativo.
 - PDF: El usuario puede crear un pdf donde le aparezcan las piezas que busca, con su información correspondiente (Desguace,antigüedad de la pieza, estado de la pieza).
+
+# FASE2
+-DIAGRAMA DE NAVEGACION
+
+ ![Texto alternativo](https://github.com/di3guez/desguambios/blob/master/Desguambios/src/main/resources/static/diagramaNavegacion.jpg"DIAGRAMA NAVEGACIÓN").
+
