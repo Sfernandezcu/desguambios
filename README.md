@@ -43,17 +43,3 @@ Buscador de piezas de desguace donde añades la pieza que deseas, y aparecen los
 ![Texto alternativo](https://github.com/di3guez/desguambios/blob/master/Desguambios/src/main/resources/static/ProductosBuscados.PNG)
 - LISTA PRODUCTOS FAVORITOS
 ![Texto alternativo](https://github.com/di3guez/desguambios/blob/master/Desguambios/src/main/resources/static/ProductosFavoritos.PNG)
-- REGISTRO
-![Texto alternativo](https://github.com/di3guez/desguambios/blob/master/Desguambios/src/main/resources/static/Registro.PNG)
-- LOGIN
-![Texto alternativo](https://github.com/di3guez/desguambios/blob/master/Desguambios/src/main/resources/static/Login.PNG)
-- SUBIR/ELIMINAR/EDITAR/VER
-![Texto alternativo](https://github.com/di3guez/desguambios/blob/master/Desguambios/src/main/resources/static/SubirEliminarEditar.PNG)
-- SUBIR PRODUCTO
-![Texto alternativo](https://github.com/di3guez/desguambios/blob/master/Desguambios/src/main/resources/static/SubirNuevoProducto.PNG)
-- LOGIN
-![Texto alternativo](https://github.com/di3guez/desguambios/blob/master/Desguambios/src/main/resources/static/Login.PNG)
-- LOGIN
-![Texto alternativo](https://github.com/di3guez/desguambios/blob/master/Desguambios/src/main/resources/static/Login.PNG)
-- PRODUCTOS DEL DESGUACE
-![Texto alternativo](https://github.com/di3guez/desguambios/blob/master/Desguambios/src/main/resources/static/ProductosDeUnDesguace.PNG)
