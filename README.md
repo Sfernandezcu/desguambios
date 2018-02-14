@@ -35,4 +35,36 @@ Buscador de piezas de desguace donde añades la pieza que deseas, y aparecen los
 -DIAGRAMA DE NAVEGACION
 
  ![Texto alternativo](https://github.com/di3guez/desguambios/blob/master/Desguambios/src/main/resources/static/diagramaNavegacion.jpg)
+ 
+ - INDEX
+![Texto alternativo](https://github.com/di3guez/desguambios/blob/master/Desguambios/src/main/resources/static/index.PNG)
+
+-PRODUCTOS BUSCADOS
+![Texto alternativo](https://github.com/di3guez/desguambios/blob/master/Desguambios/src/main/resources/static/ProductosBuscados.PNG)
+
+-LISTA PRODUCTOS FAVORITOS
+![Texto alternativo](https://github.com/di3guez/desguambios/blob/master/Desguambios/src/main/resources/static/ProductosFavoritos.PNG)
+
+-REGISTRO
+![Texto alternativo](https://github.com/di3guez/desguambios/blob/master/Desguambios/src/main/resources/static/Registro.PNG)
+
+-LOGIN
+![Texto alternativo](https://github.com/di3guez/desguambios/blob/master/Desguambios/src/main/resources/static/Login.PNG)
+
+-SUBIR/ELIMINAR/EDITAR
+![Texto alternativo](https://github.com/di3guez/desguambios/blob/master/Desguambios/src/main/resources/static/SubirEliminarEditar.PNG)
+
+-SUBIR PRODUCTO
+![Texto alternativo](https://github.com/di3guez/desguambios/blob/master/Desguambios/src/main/resources/static/SubirNuevoProducto.PNG)
+
+-BUSCAR QUE PRODUCTO EDITAR
+![Texto alternativo](https://github.com/di3guez/desguambios/blob/master/Desguambios/src/main/resources/static/BuscarProductoAEditar.PNG)
+
+-ELIMINAR PRODUCTO
+![Texto alternativo](https://github.com/di3guez/desguambios/blob/master/Desguambios/src/main/resources/static/EliminarProductoPorId.PNG)
+
+-PRODUCTOS DEL DESGUACE
+![Texto alternativo](https://github.com/di3guez/desguambios/blob/master/Desguambios/src/main/resources/static/ProductosDeUnDesguace.PNG)
+
+
 
