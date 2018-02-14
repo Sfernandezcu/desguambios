@@ -34,5 +34,5 @@ Buscador de piezas de desguace donde añades la pieza que deseas, y aparecen los
 # FASE2
 -DIAGRAMA DE NAVEGACION
 
- ![Texto alternativo](https://github.com/di3guez/desguambios/blob/master/Desguambios/src/main/resources/static/diagramaNavegacion.jpg"DIAGRAMA NAVEGACIÓN").
+ ![Texto alternativo](https://github.com/di3guez/desguambios/blob/master/Desguambios/src/main/resources/static/diagramaNavegacion.jpg)
 
