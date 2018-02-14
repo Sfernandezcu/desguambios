@@ -46,7 +46,7 @@ Buscador de piezas de desguace donde añades la pieza que deseas, y aparecen los
 
 - LISTA PRODUCTOS FAVORITOS
 ![Texto alternativo](https://github.com/di3guez/desguambios/blob/master/Desguambios/src/main/resources/static/ProductosFavoritos.PNG)
-
+- A
 - REGISTRO
 ![Texto alternativo](https://github.com/di3guez/desguambios/blob/master/Desguambios/src/main/resources/static/Registro.PNG)
 
