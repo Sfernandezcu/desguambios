@@ -22,9 +22,9 @@ public class Producto {
 	private String dirEmpresa;
 	private String usuario;
 	private String idMarca;
-	
+	/*
 	@OneToMany(mappedBy="producto")
-	private List<Imagen> Imagenes;
+	private List<Imagen> Imagenes;*/
 	
 	@OneToOne(cascade=CascadeType.ALL)
 	private Comentario comentario;
@@ -95,7 +95,7 @@ public class Producto {
 	@Override
 	public String toString() {
 		return "Producto [idProducto=" + idProducto + ", litProducto=" + litProducto + ", dirEmpresa=" + dirEmpresa
-				+ ", usuario=" + usuario + ", idMarca=" + idMarca + ", Imagenes=" + Imagenes + ", comentario="
+				+ ", usuario=" + usuario + ", idMarca=" + idMarca + "comentario="
 				+ comentario + "]";
 	}
 	

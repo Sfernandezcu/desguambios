@@ -4,12 +4,14 @@
 <meta charset="UTF-8">
 <title>Productos Encontrados</title>
 <h1>Aquí están todos sus productos buscados</h1>
+<h3>Si quiere guardar un producto como favorito, púlselo</h3>
 <table>
 		{{#listaProductos}}
    		<tr>
    			
         	<td>{{-index}}</td>
-        	<td>{{.}}</td>
+        	<td><a href="/favoritos/{{idProducto}}">{{.}}</a></td>
+        	
       	</tr>
       	{{/listaProductos}}	
  </table>
@@ -18,4 +20,3 @@
 <a href="/">Volver a Inicio</a>
 <p></p>
 </body>
-</html>
