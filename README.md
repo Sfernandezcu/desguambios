@@ -37,8 +37,7 @@ Buscador de piezas de desguace donde añades la pieza que deseas, y aparecen los
  ![Texto alternativo](https://github.com/di3guez/desguambios/blob/master/Desguambios/src/main/resources/static/diagramaNavegacion.jpg)
  
 # CAPTURAS 
- 
- - INDEX
+- INDEX
 ![Texto alternativo](https://github.com/di3guez/desguambios/blob/master/Desguambios/src/main/resources/static/index.PNG)
 - PRODUCTOS BUSCADOS
 ![Texto alternativo](https://github.com/di3guez/desguambios/blob/master/Desguambios/src/main/resources/static/ProductosBuscados.PNG)
