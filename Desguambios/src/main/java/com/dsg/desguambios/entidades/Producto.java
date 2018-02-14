@@ -30,6 +30,34 @@ public class Producto {
 	private Comentario comentario;
 	
 	
+	public Producto(long idProducto, String litProducto, String dirEmpresa, String usuario, String idMarca,
+			List<Imagen> imagenes, Comentario comentario) {
+		super();
+		this.idProducto = idProducto;
+		this.litProducto = litProducto;
+		this.dirEmpresa = dirEmpresa;
+		this.usuario = usuario;
+		this.idMarca = idMarca;
+		Imagenes = imagenes;
+		this.comentario = comentario;
+	}
+
+	public long getIdProducto() {
+		return idProducto;
+	}
+
+	public void setIdProducto(long idProducto) {
+		this.idProducto = idProducto;
+	}
+
+	public Comentario getComentario() {
+		return comentario;
+	}
+
+	public void setComentario(Comentario comentario) {
+		this.comentario = comentario;
+	}
+
 	public Producto () {}
 	
 	public Producto (String litProducto, String dir_empresa, String usuario, String id_marca) {
@@ -77,8 +105,9 @@ public class Producto {
 
 	@Override
 	public String toString() {
-		return "Producto [id_producto=" + idProducto + ", litProducto=" + litProducto + ", dir_empresa="
-				+ dirEmpresa + ", usuario=" + usuario + ", id_marca=" + idMarca + "]";
+		return "Producto [idProducto=" + idProducto + ", litProducto=" + litProducto + ", dirEmpresa=" + dirEmpresa
+				+ ", usuario=" + usuario + ", idMarca=" + idMarca + ", Imagenes=" + Imagenes + ", comentario="
+				+ comentario + "]";
 	}
 	
 	

@@ -6,7 +6,7 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-
+import com.dsg.desguambios.entidades.Comentario;
 import com.dsg.desguambios.entidades.Producto;
 
 public interface ProductoRepository extends JpaRepository<Producto, Long> {
@@ -19,6 +19,6 @@ public interface ProductoRepository extends JpaRepository<Producto, Long> {
 	//Producto findById_marca (String id_marca);
 	List<Producto> findByLitProductoContainingIgnoreCaseAndIdMarcaContainingIgnoreCase(String litProducto, String idMarca);
 	List<Producto> findByIdMarcaIgnoreCase(String idMarca);
-	
+	Comentario findByComentario (long idComentario);
 	
 }

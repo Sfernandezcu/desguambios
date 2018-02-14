@@ -18,8 +18,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.dsg.desguambios.entidades.Desguace;
 import com.dsg.desguambios.entidades.Producto;
+import com.dsg.desguambios.entidades.Comentario;
 import com.dsg.desguambios.repositorios.DesguaceRepository;
 import com.dsg.desguambios.repositorios.ProductoRepository;
+import com.dsg.desguambios.repositorios.ComentarioRepository;
+
 
 
 
@@ -183,10 +186,12 @@ public class DesguambiosController {
 		}
 		
 		//Falta por hacer con base de datos
-		@RequestMapping(value = "/subirProductoEditado")
-		public String subirProductoEditado(Model model,@RequestParam String litProducto,@RequestParam String direccionpropietario,@RequestParam String nombredesguacepropietario,@RequestParam String id_marca) {
+		@RequestMapping(value = "/subirNuevoProducto")
+		public String subirNuevoProducto(Model model,@RequestParam String litProducto,@RequestParam String direccionpropietario,@RequestParam String nombredesguacepropietario,@RequestParam String id_marca,@RequestParam String contenido) {
 			//int nM = Integer.parseInt(id_marca);
-			Producto producto = new Producto ( litProducto,  direccionpropietario,  nombredesguacepropietario,id_marca);
+			Comentario comentario = new Comentario (contenido);
+			ComentarioRepository.save(comentario);
+			Producto producto = new Producto (litProducto,  direccionpropietario,  nombredesguacepropietario,id_marca, comentario);
 			productoRepository.save(producto);
 			//listaProductos.add(producto);
 			//listaProductos.add(Producto_A);
@@ -194,7 +199,6 @@ public class DesguambiosController {
 			List<Producto> listaProductos=(List<Producto>) productoRepository.findByUsuario(usuario);
 			model.addAttribute("listaProductos",listaProductos);
 			return "verMisProductos";
-		}
 		
 		//Falta por hacer con base de datos
 		public Producto buscarP(String idProducto) {
@@ -278,26 +282,27 @@ public class DesguambiosController {
 			
 			}
 			
-			/**
-			@RequestMapping(value = "/añadirComentario")
-			public String add(Model model,@RequestParam Long idProducto) {
-				
-				//Producto producto;
-				//producto = buscarP(idProducto);
-				Producto producto=productoRepository.findByIdProducto(idProducto);
-				//listaProductos.remove(producto);
-				if(producto!=null) {
-					productoRepository.delete(producto);
-					System.out.println("La pieza con idproducto " +idProducto+ " se ha eliminado");
-					return vistaEliminarProducto(model);
-				}
-				else {
-					System.out.println("No hay una pieza con el idproducto=" +idProducto );
-					return vistaEliminarProducto(model);
-				}
-				
 			
+			/**
+			
+			@RequestMapping(value = "/comentario")
+			public String comentario(Model model) {
+				
+				return "crearComentario";
 			}
+			
+			/**
+			@RequestMapping(value = "/subirNuevoComentario")
+			public String subirNuevoComentario(Model model,@RequestParam String contenido) {
+				Comentario comentario = new Comentario (contenido);
+				ComentarioRepository.save(comentario);
+				String producto=instanciaProducto.getidProducto();
+				Producto Prudcto= ProductoRepository.findByComentario(comentario);
+				model.addAttribute("listaComentarios",listaComentarios);
+				return "subirProducto";
+		
+			}
+			
 			**/
 				/*
 		 @RequestMapping(value = "/prueba")
