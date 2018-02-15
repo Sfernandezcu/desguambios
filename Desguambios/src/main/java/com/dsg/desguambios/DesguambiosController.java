@@ -206,7 +206,7 @@ public class DesguambiosController {
 			//int nM = Integer.parseInt(id_marca);
 			Comentario comentario = new Comentario (contenido);
 			comentarioRepository.save(comentario);
-			Producto producto = new Producto (litProducto, direccionpropietario,  nombredesguacepropietario,id_marca,comentario);
+			Producto producto = new Producto (litProducto, direccionpropietario,  nombredesguacepropietario, id_marca, comentario);
 			productoRepository.save(producto);
 			//listaProductos.add(producto);
 			//listaProductos.add(Producto_A);

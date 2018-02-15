@@ -36,7 +36,7 @@ public class Comentario {
 
 	@Override
 	public String toString() {
-		return "Comentario [idComentario=" + idComentario + ", contenido=" + contenido + "]";
+		return " Comentario [idComentario = " + idComentario + ", contenido = " + contenido + "]";
 	}
 	
 	
