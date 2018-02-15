@@ -21,11 +21,10 @@ Buscador de piezas de desguace donde añades la pieza que deseas, y aparecen los
 
 
 # ENTIDADES PRINCIPALES
-- Desguace: Desguaces que contienen piezas que los clientes buscan.
-- Cliente: Se puede registrar, puede añadir información sobre su empresa, precios de sus productos.
+- Desguace: Desguaces que contienen piezas que los clientes buscan. Se puede registrar, puede añadir información sobre su empresa, precios de sus productos
 - Producto: Lo que está buscando el cliente.(Literal del producto, id del producto, nombre del desguace.usuario, direccion del desguace.direccion e id de la marca(renault, citroën, etc)  )
 - Comentarios: comentarios acerca de la pieza.
-- Imagen: imagen descriptiva del producto
+- Usuario: Un usuario, sin logarse, puede buscar piezas filtrando por sus necesidades, además puede crear un listado de piezas favoritas.
   
 # SERVICIO INTERNO
 - Correo: Si un usuario busca una pieza y no existe, todos los desguaces reciben un correo informativo.
@@ -35,6 +34,10 @@ Buscador de piezas de desguace donde añades la pieza que deseas, y aparecen los
 - DIAGRAMA DE NAVEGACION
 
  ![Texto alternativo](https://github.com/di3guez/desguambios/blob/master/Desguambios/src/main/resources/static/diagramaNavegacion.jpg)
+ 
+- DIAGRAMA E/R
+
+![Texto alternativo](https://github.com/di3guez/desguambios/blob/master/Desguambios/src/main/resources/static/entidadRelacion.png)
  
 # CAPTURAS 
 - INDEX
