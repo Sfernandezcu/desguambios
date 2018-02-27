@@ -25,7 +25,7 @@ import com.dsg.desguambios.repositorios.ProductoRepository;
 public class DesguaceController {
 
 	@Autowired
-	private Desguace instanciaDesguace = null;
+	private Desguace instanciaDesguace = null; 
 	@Autowired
 	private DesguaceRepository desguaceRepository;
 	@Autowired
