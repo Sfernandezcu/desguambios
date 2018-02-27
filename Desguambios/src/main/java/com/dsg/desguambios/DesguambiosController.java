@@ -1,3 +1,6 @@
+
+
+
 package com.dsg.desguambios;
 
 import java.io.IOException;
@@ -31,7 +34,7 @@ import com.dsg.desguambios.repositorios.ComentarioRepository;
 
 @Controller
 public class DesguambiosController {
-		
+/*		
 		//public ArrayList<Desguace> lista = new ArrayList<>();
 		
 		
@@ -51,7 +54,7 @@ public class DesguambiosController {
 		Usuario usuario;
 		
 		
-		/**
+		
 		@PostConstruct
 		public void init() {
 			Comentario comentario = new Comentario("Hola");
@@ -79,7 +82,7 @@ public class DesguambiosController {
 			//listaProductos.add(Producto_B);
 			//lista.add(desguacePepe);
 		}
-		**/
+		
 		
 
 		@PostConstruct
@@ -149,7 +152,7 @@ public class DesguambiosController {
 			return "resultadoBuscador";
 		}
 		
-		/*
+		
 		public Desguace buscarDes(String usuario) {
 			Desguace d = new Desguace();
 			
@@ -161,7 +164,7 @@ public class DesguambiosController {
 			
 			return d;
 		}
-		}*/
+		}
 		
 		@RequestMapping("/datosAlHacerLogin")
 		public String datosAlHacerLogin(Model model,@RequestParam String usuario,@RequestParam String password){
@@ -236,12 +239,13 @@ public class DesguambiosController {
 		
 		//Falta por hacer con base de datos
 		@RequestMapping(value = "/subirProductoEditado")
-		public String subirProductoEditado(Model model,@RequestParam String litProducto,@RequestParam String direccionpropietario,@RequestParam String nombredesguacepropietario,@RequestParam String id_marca,@RequestParam String contenido) {
+		public String subirProductoEditado(Model model,@RequestParam Long idProducto,@RequestParam String litProducto,@RequestParam String direccionpropietario,
+				@RequestParam String nombredesguacepropietario,@RequestParam String id_marca,@RequestParam String contenido) {
 			//int nM = Integer.parseInt(id_marca);
 			Comentario comentario = new Comentario (contenido);
 			comentarioRepository.save(comentario);
-			Producto producto = new Producto ( litProducto,  direccionpropietario,  nombredesguacepropietario,id_marca, comentario);
-			productoRepository.save(producto);
+			//Producto producto = new Producto ( litProducto,  direccionpropietario,  nombredesguacepropietario,id_marca, comentario);
+			productoRepository.updateProducto(litProducto, direccionpropietario, nombredesguacepropietario, id_marca, comentario, idProducto);
 			//listaProductos.add(producto);
 			//listaProductos.add(Producto_A);
 			String usuario=instanciaDesguace.getUsuario();
@@ -274,8 +278,10 @@ public class DesguambiosController {
 			model.addAttribute("nombredesguacepropietario",producto.getUsuario());
 			model.addAttribute("direccionpropietario",producto.getDirEmpresa());
 			model.addAttribute("contenido",producto.getComentario());
+			model.addAttribute("idProducto",producto.getIdProducto());
+			
 			//listaProductos.remove(producto);
-			productoRepository.delete(producto);
+			//--------------------------------productoRepository.delete(producto);
 			return "editarProducto";
 			}
 			else {
@@ -347,7 +353,7 @@ public class DesguambiosController {
 				
 			
 			}
-			/**
+			
 			@RequestMapping(value = "/comentario")
 			public String comentario(Model model) {
 				
@@ -365,7 +371,7 @@ public class DesguambiosController {
 				return "verMisProductos";
 		
 			}
-				/*
+				
 		 @RequestMapping(value = "/prueba")
 		 public String registro(Model model) {
 			
@@ -387,8 +393,10 @@ public class DesguambiosController {
 			 
 			 
 			 
-		 }		*/ 
+		 }		 
 		 
 		 
-		 
+		*/ 
 	}
+	
+	

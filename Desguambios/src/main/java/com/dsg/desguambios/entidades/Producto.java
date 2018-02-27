@@ -56,6 +56,9 @@ public class Producto {
 		this.idMarca=id_marca;
 	}
 	
+	public long getIdProducto() {
+		return this.idProducto;
+	}
 	
 	public String getLitProducto () {
 		return litProducto;
