@@ -73,6 +73,11 @@ public class IndexController {
 		return "index";
 	}
 	
+	@RequestMapping("/index")
+	public String webIndex2(Model model) {
+		return "index";
+	}
+	
 	
 	
 	//Buscador principal
