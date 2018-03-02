@@ -17,6 +17,7 @@
 
 <form action="/logout" method="post">
 		<input type="submit" value="Sign Out" />
+		<input type="hidden" name="_csrf" value="{{token}}"/>
 	</form>
 
 </body>
