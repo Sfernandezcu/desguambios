@@ -39,6 +39,7 @@ public class IndexController {
 
 	@Autowired 
 	Usuario usuario;
+	/*
 	
 	@PostConstruct
 	public void init() {
@@ -64,7 +65,7 @@ public class IndexController {
 		productoRepository.save(Producto_E);
 		productoRepository.save(Producto_F);
 		
-	}
+	}*/
 	
 	
 	
