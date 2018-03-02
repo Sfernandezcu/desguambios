@@ -13,7 +13,9 @@
 		
 		</form>
 		<form action="/subirEliminarEditar" method="post">
-		<input  type="submit" value="Atras"></form>
+		<input  type="submit" value="Atras">
+		<input type="hidden" name="_csrf" value="{{token}}"/>
+		</form>
    	</table>
 </head>
 
