@@ -9,7 +9,7 @@ import com.dsg.desguambios.entidades.Desguace;
 
 
 
-public interface DesguaceRepository extends CrudRepository<Desguace, String> {
+public interface DesguaceRepository extends JpaRepository<Desguace, String> {
 	
 	Desguace findByUsuario(String usuario);
 	Desguace findByDireccion(String direccion);

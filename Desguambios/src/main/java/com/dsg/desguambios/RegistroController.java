@@ -52,14 +52,13 @@ public class RegistroController {
 			
 			@RequestMapping(value = "/nuevoRegistro")
 			public String nuevoRegistro(Model model) {
-				
 				return "registro";
 			}
 			
 			
 			 @RequestMapping(value = "/registro")
 			 public String registro(Model model,@RequestParam String alta, String usuario,String email,
-					  String direccion,  String password,  String valPassword) {
+					  String direccion,  String password, String valPassword) {
 				
 				if(Integer.parseInt(alta)==1) {
 					Desguace instanciaDesguace = new Desguace(usuario,email,direccion,password,valPassword);

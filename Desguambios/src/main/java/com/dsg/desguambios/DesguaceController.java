@@ -4,8 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
+import javax.servlet.http.HttpServletRequest;
 
+import org.apache.catalina.authenticator.SpnegoAuthenticator.AuthenticateAction;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -49,7 +52,8 @@ public class DesguaceController {
 			
 			
 			@RequestMapping(value = "/subirProducto")
-			public String subirProducto1(Model model) {
+			public String subirProducto1(Model model,HttpServletRequest request) {
+				instanciaDesguace = desguaceRepository.findByUsuario(request.getUserPrincipal().getName());
 				
 				model.addAttribute("nombredesguacepropietario",instanciaDesguace.getUsuario());
 				model.addAttribute("direccionpropietario",instanciaDesguace.getDireccion());
@@ -58,14 +62,16 @@ public class DesguaceController {
 			
 			
 			@RequestMapping(value = "/subirNuevoProducto")
-			public String subirNuevoProducto(Model model,@RequestParam String litProducto,@RequestParam String direccionpropietario,@RequestParam String nombredesguacepropietario,@RequestParam String id_marca,@RequestParam String contenido) {
-				//int nM = Integer.parseInt(id_marca);
+			public String subirNuevoProducto(Model model,@RequestParam String litProducto,@RequestParam String direccionpropietario,@RequestParam String nombredesguacepropietario,@RequestParam String id_marca,@RequestParam String contenido,HttpServletRequest request) {
+				
+				instanciaDesguace = desguaceRepository.findByUsuario(request.getUserPrincipal().getName());
+				
 				Comentario comentario = new Comentario (contenido);
 				comentarioRepository.save(comentario);
+				
 				Producto producto = new Producto (litProducto, direccionpropietario,  nombredesguacepropietario, id_marca, comentario);
 				productoRepository.save(producto);
-				//listaProductos.add(producto);
-				//listaProductos.add(Producto_A);
+				
 				String usuario=instanciaDesguace.getUsuario();
 				List<Producto> listaProductos=(List<Producto>) productoRepository.findByUsuario(usuario);
 				model.addAttribute("listaProductos",listaProductos);
@@ -76,8 +82,9 @@ public class DesguaceController {
 			
 			
 			@RequestMapping(value = "/verMisProductos")
-			public String verMisProducto(Model model) {
+			public String verMisProducto(Model model,HttpServletRequest request) {
 				
+				instanciaDesguace = desguaceRepository.findByUsuario(request.getUserPrincipal().getName());
 				String usuario=instanciaDesguace.getUsuario();
 				
 

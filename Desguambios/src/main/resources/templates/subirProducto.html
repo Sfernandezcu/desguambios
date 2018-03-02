@@ -18,11 +18,12 @@
  	<textarea name="contenido" rows="10" cols="40" placeholder="contenido" >Escribe aquí el comentario sobre tu producto</textarea>
   	<br>
   	<input  name="alta" type="hidden" value="1">
+  	<input type="hidden" name="_csrf" value="{{token}}"/>
 	<input  type="submit" value="Subir Producto">
 	</form>
-	<form action="/subirEliminarEditar" method="post">
-		<input  type="submit" value="Atras">
+	<form action="/subirEliminarEditar" method="post">		
 		<input type="hidden" name="_csrf" value="{{token}}"/>
+		<input  type="submit" value="Atras">
 		</form>
 		
 </body>
