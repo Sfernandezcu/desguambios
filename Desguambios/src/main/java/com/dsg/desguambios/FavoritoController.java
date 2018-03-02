@@ -27,7 +27,8 @@ public class FavoritoController {
 	
 	@RequestMapping("/favoritos")
 	public String delvolverFavoritos(Model model) {
-		model.addAttribute("listaFavoritos", usuario.sacarLaLista());
+	//	model.addAttribute("listaFavoritos", usuario.sacarLaLista());
+		//model.addAttribute("listaFavoritos", usuario.sacarLaLista());
 		return "resultadoFavoritos";
 	}
 	 

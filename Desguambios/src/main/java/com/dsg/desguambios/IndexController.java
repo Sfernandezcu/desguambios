@@ -72,11 +72,11 @@ public class IndexController {
 	public String webIndex(Model model) {
 		return "index";
 	}
-	
+	/*
 	@RequestMapping("/index")
 	public String webIndex2(Model model) {
 		return "index";
-	}
+	}*/
 	
 	
 	

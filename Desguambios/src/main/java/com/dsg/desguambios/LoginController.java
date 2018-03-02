@@ -33,6 +33,7 @@ public class LoginController {
 
 	@Autowired 
 	Usuario usuario;
+	
 	/*
 	@RequestMapping("/datosAlHacerLogin")
 	public String datosAlHacerLogin(Model model,@RequestParam String usuario,@RequestParam String password){

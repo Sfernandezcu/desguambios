@@ -13,13 +13,14 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         
         // Public pages
         http.authorizeRequests().antMatchers("/").permitAll();
-        http.authorizeRequests().antMatchers("/index").permitAll();
+        //http.authorizeRequests().antMatchers("/index").permitAll();
         http.authorizeRequests().antMatchers("/login").permitAll();
         http.authorizeRequests().antMatchers("/loginError").permitAll();
         http.authorizeRequests().antMatchers("/registro").permitAll();
         http.authorizeRequests().antMatchers("/registroCorrecto").permitAll();
         http.authorizeRequests().antMatchers("/guardadoFavorito").permitAll();
-        http.authorizeRequests().antMatchers("/resultadoFavorito").permitAll();
+        http.authorizeRequests().antMatchers("/resultadoFavoritos").permitAll();
+        http.authorizeRequests().antMatchers("/favoritos").permitAll();
 
         // Private pages (all other pages)
         http.authorizeRequests().anyRequest().authenticated();
@@ -32,8 +33,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         http.formLogin().failureUrl("/loginError");
 
         // Logout
-        http.logout().logoutUrl("/logout");  //Falta por poner el campo logout con el boton correspondiente de deslogarse, en los html que queramos que habiliten esa opcion
-        http.logout().logoutSuccessUrl("/index");
+        http.logout().logoutUrl("/logout"); 
+        http.logout().logoutSuccessUrl("/");
         
         // Disable CSRF at the moment
         http.csrf().disable();
