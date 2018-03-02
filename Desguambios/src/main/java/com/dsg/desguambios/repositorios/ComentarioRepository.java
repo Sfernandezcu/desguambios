@@ -10,5 +10,8 @@ public interface ComentarioRepository extends JpaRepository<Comentario, Long> {
 	Comentario findByIdComentario(long idComentario);
 	List<Comentario> findByContenido(String contenido);
 	
+	
+	
+	
 }
 

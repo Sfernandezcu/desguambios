@@ -78,9 +78,8 @@ public class DesguaceController {
 			@RequestMapping(value = "/verMisProductos")
 			public String verMisProducto(Model model) {
 				
-				System.out.print("hol");
 				String usuario=instanciaDesguace.getUsuario();
-				System.out.print("uauEIO"+usuario);
+				
 
 				List<Producto> listaProductos=(List<Producto>) productoRepository.findByUsuario(usuario);
 				model.addAttribute("listaProductos",listaProductos);
@@ -98,13 +97,21 @@ public class DesguaceController {
 			@RequestMapping(value = "/subirProductoEditado")
 			public String subirProductoEditado(Model model,@RequestParam Long idProducto,@RequestParam String litProducto,@RequestParam String direccionpropietario,
 					@RequestParam String nombredesguacepropietario,@RequestParam String id_marca,@RequestParam String contenido) {
-				//int nM = Integer.parseInt(id_marca);
-				Comentario comentario = new Comentario (contenido);
-				comentarioRepository.save(comentario);
-				//Producto producto = new Producto ( litProducto,  direccionpropietario,  nombredesguacepropietario,id_marca, comentario);
-				productoRepository.updateProducto(litProducto, direccionpropietario, nombredesguacepropietario, id_marca, comentario, idProducto);
-				//listaProductos.add(producto);
-				//listaProductos.add(Producto_A);
+			
+				//Comentario comentario = new Comentario (contenido);
+				
+				
+				
+				
+				
+				
+				//comentarioRepository.save(comentario);
+				
+				productoRepository.updateProducto(litProducto, direccionpropietario, nombredesguacepropietario, id_marca, contenido, idProducto);
+				
+				
+				
+				
 				String usuario=instanciaDesguace.getUsuario();
 				List<Producto> listaProductos=(List<Producto>) productoRepository.findByUsuario(usuario);
 				model.addAttribute("listaProductos",listaProductos);
