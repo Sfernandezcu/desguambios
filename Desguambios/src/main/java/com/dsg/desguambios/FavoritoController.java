@@ -23,15 +23,12 @@ public class FavoritoController {
 	public String guardarFavorito(Model model, @PathVariable Long idProducto) {
 		Producto p = new Producto();
 		p=productoRepository.findByIdProducto(idProducto);
-		System.out.println(p);
 		usuario.aniadirALaLista(p);
-		System.out.println(usuario.sacarLaLista());
 		return "guardadoFavorito";
 	}
 	
 	@RequestMapping("/favoritos")
 	public String delvolverFavoritos(Model model) {
-	//	model.addAttribute("listaFavoritos", usuario.sacarLaLista());
 		model.addAttribute("listaFavoritos", usuario.sacarLaLista());
 		return "resultadoFavoritos";
 	}
