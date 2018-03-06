@@ -1,6 +1,7 @@
 package com.dsg.desguambios;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -10,6 +11,7 @@ import com.dsg.desguambios.entidades.Producto;
 import com.dsg.desguambios.entidades.Usuario;
 import com.dsg.desguambios.repositorios.ProductoRepository;
 
+@Controller
 public class FavoritoController {
 	@Autowired
 	private ProductoRepository productoRepository;
@@ -19,21 +21,18 @@ public class FavoritoController {
 
 	@GetMapping("/favoritos/{idProducto}")
 	public String guardarFavorito(Model model, @PathVariable Long idProducto) {
-		System.out.println("Antes de new Producto");
 		Producto p = new Producto();
-		System.out.println("Despues de new Producto"+p);
-		
 		p=productoRepository.findByIdProducto(idProducto);
 		System.out.println(p);
-		
 		usuario.aniadirALaLista(p);
+		System.out.println(usuario.sacarLaLista());
 		return "guardadoFavorito";
 	}
 	
 	@RequestMapping("/favoritos")
 	public String delvolverFavoritos(Model model) {
 	//	model.addAttribute("listaFavoritos", usuario.sacarLaLista());
-		//model.addAttribute("listaFavoritos", usuario.sacarLaLista());
+		model.addAttribute("listaFavoritos", usuario.sacarLaLista());
 		return "resultadoFavoritos";
 	}
 	 

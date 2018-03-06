@@ -32,7 +32,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         http.authorizeRequests().antMatchers("/resultadoBuscador").permitAll();
         
         
-        http.authorizeRequests().antMatchers("/favoritos/{{idProducto}}").permitAll();
+        http.authorizeRequests().antMatchers("/favoritos/*").permitAll();
         
         http.authorizeRequests().antMatchers("/guardadoFavorito").permitAll();
         http.authorizeRequests().antMatchers("/resultadoFavoritos").permitAll();
