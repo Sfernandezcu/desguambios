@@ -22,7 +22,9 @@ public class Comentario {
 		this.contenido = contenido;
 	}
 
-
+public long getIdComentario() {
+	return idComentario;
+}
 	public String getContenido() {
 		return contenido;
 	}

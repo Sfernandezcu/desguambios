@@ -105,17 +105,18 @@ public class DesguaceController {
 			public String subirProductoEditado(Model model,@RequestParam Long idProducto,@RequestParam String litProducto,@RequestParam String direccionpropietario,
 					@RequestParam String nombredesguacepropietario,@RequestParam String id_marca,@RequestParam String contenido) {
 			
-				//Comentario comentario = new Comentario (contenido);
+			//	Comentario comentario = new Comentario (contenido);
+				
+				Producto producto = productoRepository.findByIdProducto(idProducto);
+				Comentario comentario = producto.getComentario();
+				
+				long idComentario = comentario.getIdComentario();
 				
 				
+			//	comentarioRepository.save(comentario);
 				
-				
-				
-				
-				//comentarioRepository.save(comentario);
-				
-				productoRepository.updateProducto(litProducto, direccionpropietario, nombredesguacepropietario, id_marca, contenido, idProducto);
-				
+				productoRepository.updateProducto(litProducto, direccionpropietario, nombredesguacepropietario, id_marca, idProducto);
+				comentarioRepository.updateComentario(contenido, idComentario);
 				
 				
 				

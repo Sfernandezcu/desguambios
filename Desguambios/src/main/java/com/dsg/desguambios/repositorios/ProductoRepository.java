@@ -26,11 +26,12 @@ public interface ProductoRepository extends JpaRepository<Producto, Long> {
 	
 	
 	
+	
 	@Transactional
 	@Modifying
 	@Query(
-			value = "UPDATE `desguambios`.`producto` SET `dir_empresa`=:direccionpropietario, `id_marca`=:id_marca , `lit_producto`=:litProducto, `usuario`=:nombredesguacepropietario, `comentario_id_comentario`=:comentario WHERE `id_producto`=:idProducto", nativeQuery = true)
-	void updateProducto(@Param("litProducto")String litProducto, @Param("direccionpropietario")String direccionpropietario, @Param("nombredesguacepropietario") String nombredesguacepropietario,@Param("id_marca")String id_marca,@Param("comentario") String comentario,@Param("idProducto") long idProducto);
+			value = "UPDATE `desguambios`.`producto` SET `dir_empresa`=:direccionpropietario, `id_marca`=:id_marca , `lit_producto`=:litProducto, `usuario`=:nombredesguacepropietario,  WHERE `id_producto`=:idProducto", nativeQuery = true)
+	void updateProducto(@Param("litProducto")String litProducto, @Param("direccionpropietario")String direccionpropietario, @Param("nombredesguacepropietario") String nombredesguacepropietario,@Param("id_marca")String id_marca,@Param("idProducto") long idProducto);
 
 	
 	
