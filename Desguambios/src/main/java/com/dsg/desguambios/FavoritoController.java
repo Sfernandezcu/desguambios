@@ -19,8 +19,13 @@ public class FavoritoController {
 
 	@GetMapping("/favoritos/{idProducto}")
 	public String guardarFavorito(Model model, @PathVariable Long idProducto) {
+		System.out.println("Antes de new Producto");
 		Producto p = new Producto();
+		System.out.println("Despues de new Producto"+p);
+		
 		p=productoRepository.findByIdProducto(idProducto);
+		System.out.println(p);
+		
 		usuario.aniadirALaLista(p);
 		return "guardadoFavorito";
 	}
