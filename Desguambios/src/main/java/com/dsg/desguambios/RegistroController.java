@@ -63,16 +63,8 @@ public class RegistroController {
 			 public String registro(Model model,@RequestParam String alta, String usuario,String email,
 					  String direccion,  String password, String valPassword) {
 				
-				 RestTemplate restTemplate = new RestTemplate();
-				 String URL="http://localhost:8080/";
 				 
-				 MultiValueMap<String, String> correo= new LinkedMultiValueMap<String, String>();
-			        correo.add("email", email);
-			        correo.add("subject", "Registro Satisfactorio");
-			        correo.add("body", " Su registro ha sido realizado Correctamente ");
-			        
-			      
-			   
+				 
 				 
 				 
 				if(Integer.parseInt(alta)==1) {
@@ -84,7 +76,9 @@ public class RegistroController {
 					
 					
 					//enviar correo confirmacion de registro
-					restTemplate.postForLocation(URL, correo);
+					RestTemplate template=new RestTemplate();
+				    String url= "http://localhost:8080/sendEmail?correo="+email+"&usuario="+usuario;
+				    Boolean b =template.getForObject(url, Boolean.class);
 					
 				} else {
 					model.addAttribute("mensaje", false);
