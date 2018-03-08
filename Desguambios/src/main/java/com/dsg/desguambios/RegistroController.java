@@ -84,7 +84,7 @@ public class RegistroController {
 					
 					
 					//enviar correo confirmacion de registro
-					 restTemplate.postForLocation(URL, correo);
+					restTemplate.postForLocation(URL, correo);
 					
 				} else {
 					model.addAttribute("mensaje", false);
