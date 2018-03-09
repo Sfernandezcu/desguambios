@@ -27,7 +27,6 @@ Buscador de piezas de desguace donde añades la pieza que deseas, y aparecen los
 - Usuario: Un usuario, sin logarse, puede buscar piezas filtrando por sus necesidades, además puede crear un listado de piezas favoritas.
   
 # SERVICIO INTERNO
-- Correo: Si un usuario busca una pieza y no existe, todos los desguaces reciben un correo informativo.
 - PDF: El usuario puede crear un pdf donde le aparezcan las piezas que busca, con su información correspondiente (Desguace,antigüedad de la pieza, estado de la pieza).
 
 # FASE 2
@@ -78,3 +77,7 @@ Buscador de piezas de desguace donde añades la pieza que deseas, y aparecen los
 - PRODUCTOS DEL DESGUACE
 
 ![Texto alternativo](https://github.com/di3guez/desguambios/blob/master/Desguambios/src/main/resources/static/ProductosDeUnDesguace.PNG)
+
+- EXPORTAR PDF
+
+![Texto alternativo](https://github.com/di3guez/desguambios/blob/master/Desguambios/src/main/resources/static/recortePDF.PNG)
