@@ -84,6 +84,10 @@ Buscador de piezas de desguace donde añades la pieza que deseas, y aparecen los
 
 ![Texto alternativo](https://github.com/di3guez/desguambios/blob/master/Desguambios/src/main/resources/static/recortePDF.PNG)
 
-- NUEVO DIAGRAMA DE NAVEGACIÓN
+- NUEVO DIAGRAMA DE NAVEGACIÓN (Actualizado Fase 3)
 
 ![Texto alternativo](https://github.com/di3guez/desguambios/blob/master/Desguambios/src/main/resources/static/diagramaNavegacionFase3.png)
+
+- DIAGRAMA E/R (Actualizado Fase 3)
+
+![Texto alternativo](https://github.com/di3guez/desguambios/blob/master/Desguambios/src/main/resources/static/diagramaERFase3.jpeg)
