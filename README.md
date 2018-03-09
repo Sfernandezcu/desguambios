@@ -93,5 +93,5 @@ Buscador de piezas de desguace donde añades la pieza que deseas, y aparecen los
 ![Texto alternativo](https://github.com/di3guez/desguambios/blob/master/Desguambios/src/main/resources/static/diagramaERFase3.jpeg)
 
 
--INSTRUCCIONES PRECISAS PARA DESPLEGAR LA APLICACIÓN:
+- INSTRUCCIONES PRECISAS PARA DESPLEGAR LA APLICACIÓN:
 Compilación, cómo subir el jar, quéhace falta instalar en la máquina
