@@ -83,3 +83,7 @@ Buscador de piezas de desguace donde añades la pieza que deseas, y aparecen los
 - EXPORTAR PDF
 
 ![Texto alternativo](https://github.com/di3guez/desguambios/blob/master/Desguambios/src/main/resources/static/recortePDF.PNG)
+
+- NUEVO DIAGRAMA DE NAVEGACIÓN
+
+![Texto alternativo](https://github.com/di3guez/desguambios/blob/master/Desguambios/src/main/resources/static/diagramaNavegacionFase3.png)
