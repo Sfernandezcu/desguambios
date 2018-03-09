@@ -78,6 +78,8 @@ Buscador de piezas de desguace donde añades la pieza que deseas, y aparecen los
 
 ![Texto alternativo](https://github.com/di3guez/desguambios/blob/master/Desguambios/src/main/resources/static/ProductosDeUnDesguace.PNG)
 
+# FASE 3
+
 - EXPORTAR PDF
 
 ![Texto alternativo](https://github.com/di3guez/desguambios/blob/master/Desguambios/src/main/resources/static/recortePDF.PNG)
