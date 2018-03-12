@@ -129,10 +129,10 @@ iptables -A OUTPUT -p tcp -m tcp --dport 3306 -m state --state NEW,ESTABLISHED -
 
 9º hacemos telnet desguambios 8080 para ver si escucha desde ese puerto ya que lo necesitamos para poder hacer los post desde el servidor web. No nos hace porque el firewall lo tiene capado. Por lo que vamos aplicar unas reglas para que nos permita.
 
-en la parte del servidorAPI añadimos esta iptable:
+en la parte del servidorAPI añadimos esta iptable para permitir la entrada por el puerto 8080:
 iptables -A INPUT -p tcp -m tcp --sport 8080 -j ACCEPT
 
-en la parte del servidorWEB añadimos esta iptable:
+en la parte del servidorWEB añadimos esta iptable para permitir la salida puerto 8080:
 iptables -A OUTPUT -p tcp -m tcp --dport 8080 -j ACCEPT 
 
 
