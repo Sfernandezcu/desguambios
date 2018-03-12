@@ -135,9 +135,9 @@ iptables -A INPUT -p tcp -m tcp --sport 8080 -j ACCEPT
 en la parte del servidorWEB añadimos esta iptable para permitir la salida puerto 8080:
 iptables -A OUTPUT -p tcp -m tcp --dport 8080 -j ACCEPT 
 
+10ª Nos instalamos java con apt-get install openjdk y ya podemos inciar los jar.
 
-
-10º iniciamos en cada maquina el jar  "java -jar desguambios.jar" y "java -jar desguambiosAPI.jar"
+11º iniciamos en cada maquina el jar  "java -jar desguambios.jar" y "java -jar desguambiosAPI.jar"
 
 
 
