@@ -95,3 +95,51 @@ Buscador de piezas de desguace donde añades la pieza que deseas, y aparecen los
 
 - INSTRUCCIONES PRECISAS PARA DESPLEGAR LA APLICACIÓN:
 Compilación, cómo subir el jar, quéhace falta instalar en la máquina
+
+1º Añadimos las dependencias al pom.xml
+
+<build>
+	<plugins>
+		<plugin>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-maven-plugin</artifactId>
+		</plugin>
+	</plugins>
+</build>
+
+2º Cambiamos los application.properties del servidor APi donde añadimos la url del servidor de bbdd. En nuestro caso el servidor bbdd esta ubicado dentro del entorno donde esta alojada la web.
+3º Cambiamos el post para enviar el objeto desde la web a la API, a la url de la web.
+
+4º hacemos RUN AS build... y en goals añadimos package. Con esto creamos el JAR de WEB y API.
+
+5º Nos creamos dos maquinas virtuales con adaptador puente , el cual una actuará de servidor y la otra de servidor de BBDD y web.
+
+6º En el servidor de BBDD añadimos en my.cnf "bind-address=ip_API_REST" para permitir la conexión remota desde el servidor API a la bbdd.
+
+7º Nos creamos un usuario en mysql para que pueda acceder remotamente con la siguiente sentencia
+GRANT ALL PRIVILEGES ON desguambios.* TO 'root'@'ip_API_REST' IDENTIFIED BY PASSWORD 'root';
+
+
+8º hacemos telnet desguambios 3306 para ver si tenemos conexión. Aplicamos reglas iptables para permitir escuchar por el puerto 3306 en el servidorBBDD:
+iptables -A INPUT -p tcp -m tcp --sport 3306 -m state --state NEW,ESTABLISHED -j ACCEPT
+
+y tambien para permitir salida de trafico desde el servidorAPI
+iptables -A OUTPUT -p tcp -m tcp --dport 3306 -m state --state NEW,ESTABLISHED -j ACCEPT
+
+
+9º hacemos telnet desguambios 8080 para ver si escucha desde ese puerto ya que lo necesitamos para poder hacer los post desde el servidor web. No nos hace porque el firewall lo tiene capado. Por lo que vamos aplicar unas reglas para que nos permita.
+
+en la parte del servidorAPI añadimos esta iptable:
+iptables -A INPUT -p tcp -m tcp --sport 8080 -j ACCEPT
+
+en la parte del servidorWEB añadimos esta iptable:
+iptables -A OUTPUT -p tcp -m tcp --dport 8080 -j ACCEPT 
+
+
+
+10º iniciamos en cada maquina el jar  "java -jar desguambios.jar" y "java -jar desguambiosAPI.jar"
+
+
+
+
+
