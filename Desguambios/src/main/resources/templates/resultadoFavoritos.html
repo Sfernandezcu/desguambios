@@ -4,18 +4,47 @@
 <meta charset="UTF-8">
 <title>Productos Favoritos</title>
 <h1>Aquí están todos sus productos guardados como favoritos</h1>
+<style>
+	th
+	{
+		background: orange;
+		height:30px;
+	}
+	table,th,td
+	{
+		border:2px solid green;
+	}
+	table
+	{
+		width:90%;
+		color:black;
+		text-align:center;
+	}
+</style>
+<table><tr>
+		<th>ID-Producto</th>
+		<th>Literal Producto</th>
+		<th>DirEmpresa</th>
+		<th>Desguace</th>
+		<th>Marca </th>
+		<th>Comentario</th>
+		</tr></table>
 <table>
-		{{#listaFavoritos}}
-   		<tr>
-   			
-        	<td>{{-index}}</td>
-        	<td>{{.}}</a></td>
-        	
-      	</tr>
-      	{{/listaFavoritos}}	
- </table>
+		
+		
+	{{#listaFavoritos}}
+		<tr>
+		<td>{{-index}}</td>
+		<td>{{.}}</td>		
+		</tr>
+	{{/listaFavoritos}}
+	</table>
 </head>
+
+	
+
 <body background="fondo3.png" style="background-repeat: no-repeat; ">
+
 <a href="/">Volver a Inicio </a>
 <a href="/pdfFavoritos"> Crear PDF</a>
 <p></p>
