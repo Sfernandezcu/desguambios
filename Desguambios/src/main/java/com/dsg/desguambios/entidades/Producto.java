@@ -97,7 +97,7 @@ public class Producto {
 
 	@Override
 	public String toString() {
-		return "Tipo de pieza: " + litProducto + ", Dirección del desguace: " + dirEmpresa
+		return "Tipo de pieza:" + litProducto + ", Dirección del desguace: " + dirEmpresa
 				+ ", Nombre del desguace: " + usuario + ", Marca de la pieza: " + idMarca + ", Comentario: "
 				+ comentario;
 	}
