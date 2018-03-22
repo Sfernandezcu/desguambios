@@ -1,6 +1,7 @@
 package com.dsg.desguambios.entidades;
 
 import java.util.ArrayList;
+import java.util.Collection;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -32,5 +33,16 @@ public class Usuario {
 	
 	public ArrayList<Producto> sacarLaLista() {
 		return listaFavoritos;
+	}
+	
+	public ArrayList<String> lista(){
+		ArrayList<String> r = new ArrayList<String>();
+		for (Producto p : listaFavoritos) {
+			String n;
+			n = p.getLitProducto();
+			r.add(n);
+		}
+		
+		return r;
 	}
 }
