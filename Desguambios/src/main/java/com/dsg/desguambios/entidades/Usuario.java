@@ -41,10 +41,6 @@ public class Usuario {
 			String n;
 			n = p.getLitProducto();
 			r.add(n);
-			n = p.getDirEmpresa();
-			r.add(n);
-			n = p.getUsuario();
-			r.add(n);
 		}
 		
 		return r;
