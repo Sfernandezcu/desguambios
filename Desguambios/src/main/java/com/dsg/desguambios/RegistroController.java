@@ -76,9 +76,9 @@ public class RegistroController {
 					
 					
 					//enviar correo confirmacion de registro
-					RestTemplate template=new RestTemplate();
-				    String url= "http://localhost:8080/sendEmail?correo="+email+"&usuario="+usuario;
-				    Boolean b =template.getForObject(url, Boolean.class);
+					//RestTemplate template=new RestTemplate();
+				    //String url= "http://localhost:8080/sendEmail?correo="+email+"&usuario="+usuario;
+				    //Boolean b =template.getForObject(url, Boolean.class);
 					
 				} else {
 					model.addAttribute("mensaje", false);
