@@ -9,11 +9,23 @@
 </head>
 <body background="fondo3.png" style="background-repeat: no-repeat; ">
 <style>
+
 	th
 	{
 		background: orange;
+		text-align: center;
 		height:30px;
+		width:30px;
+		
 	}
+	td
+	{   
+		
+		text-align: center;
+		width:30px;
+	}
+
+	tr:nth-child(even) {background-color: #f2f2f2;}
 	table,th,td
 	{
 		border:2px solid green;
@@ -22,19 +34,34 @@
 	{
 		width:90%;
 		color:black;
-		text-align:center;
+		
 	}
 </style>
+
 <table>
-		{{#listaProductos}}
-   		<tr>
-   			
-        	<td>{{-index}}</td>
-        	<td><a href="/favoritos/{{idProducto}}">{{.}}</a></td>
-        	
-      	</tr>
-      	{{/listaProductos}}	
- </table>
+		<tr>
+ 		<th>ID</th>
+ 		<th>Tipo de Producto</th>
+ 		<th>Direccion del Desguace</th>
+ 		<th>Nombre del Desguace</th>
+ 		<th>Marca Del Producto </th>
+ 		<th>Comentario</th>
+ 		</tr>
+		
+		
+	{{#listaProductos}}
+		<tr>		
+		<td><a href="/favoritos/{{idProducto}}">{{idProducto}}</td>
+		<td><a href="/favoritos/{{idProducto}}">{{litProducto}}</td>
+		<td><a href="/favoritos/{{idProducto}}">{{dirEmpresa}}</td>
+		<td><a href="/favoritos/{{idProducto}}">{{usuario}}</td>
+		<td><a href="/favoritos/{{idProducto}}">{{idMarca}}</td>
+		<td><a href="/favoritos/{{idProducto}}">{{comentario.contenido}}</td>	
+		</tr>
+	{{/listaProductos}}
+	</table>
+
+
 <a href="/">Volver a Inicio</a>
 <p></p>
 </body>

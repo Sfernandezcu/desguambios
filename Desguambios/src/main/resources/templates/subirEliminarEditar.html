@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>Suba, edite y elimine sus productos</title>
 </head>
-<body>
+<body background="fondo3.png" style="background-repeat: no-repeat; ">
 <h1>Suba, edite y elimine sus productos</h1>
 <p></p>
 <a href="/subirProducto.html">Subir un nuevo producto</a>
@@ -15,10 +15,22 @@
 <p></p>
 <a href="/eliminarProducto.html">Eliminar producto </a>
 
-<form action="/logout" method="post">
-	<input type="hidden" name="_csrf" value="{{token}}"/>
-	<input type="submit" value="Sign Out" />
-</form>
+<table>
+	<tr>
+		<td>
+		<form action="/logout" method="post">
+			<input type="hidden" name="_csrf" value="{{token}}"/>
+			<input type="submit" value="Logout" />
+		</form>
+		</td>
+		<td>
+		<form action="/" method="post">
+			<input type="hidden" name="_csrf" value="{{token}}"/>
+			<input type="submit" value="Volver a Inicio" />
+		</form>
+		</td>
+	</tr>
+</table>
 
 </body>
 </html>

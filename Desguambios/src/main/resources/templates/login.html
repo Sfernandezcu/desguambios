@@ -3,8 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <h1>Haz login o registrate</h1>
+
+<style>
+	td
+	{
+		background: orange;
+		text-align: center;
+	}
+	
+	table
+	{
+		color:black;
+		
+	}
+
+
+</style>
 </head>
-<body>
+<body background="fondo3.png" style="background-repeat: no-repeat; ">
 <form action="/login" method="post">
 		Usuario:
 		<input name="usuario" type="text" >
@@ -15,13 +31,17 @@
 		
 </form>
  
-<p></p>
-<form action="/nuevoRegistro">
+ <table>
+ 	<tr>
+ 		<td><form action="/nuevoRegistro">
 		<input type="submit" value="Ir a registro" />
 		<input name="alta" type="hidden" value="0">
-	</form>
-	
-<p></p>	
+		</form></td>
+		<td><form action="/">
+		<input type="submit" value="Ir a Inicio" />
+		</form></td>
+ 	</tr>
+ </table>
 </body>
 </html>
 
