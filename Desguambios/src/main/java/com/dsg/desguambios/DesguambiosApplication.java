@@ -23,7 +23,7 @@ public class DesguambiosApplication {
 	@Bean
     public CacheManager cacheManager() {
     	LOG.info("Activating cache...");
-    	return new ConcurrentMapCacheManager("favoritos");
+    	return new ConcurrentMapCacheManager("productos");
     }
 	
 }
