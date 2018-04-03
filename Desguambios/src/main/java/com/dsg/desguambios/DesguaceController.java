@@ -65,6 +65,9 @@ public class DesguaceController {
 			public String subirNuevoProducto(Model model,@RequestParam String litProducto,@RequestParam String direccionpropietario,@RequestParam String nombredesguacepropietario,@RequestParam String id_marca,@RequestParam String contenido,HttpServletRequest request) {
 				
 				instanciaDesguace = desguaceRepository.findByUsuario(request.getUserPrincipal().getName());
+				if(contenido == null) {
+					contenido = "";
+				}
 				
 				Comentario comentario = new Comentario (contenido);
 				comentarioRepository.save(comentario);
@@ -102,28 +105,39 @@ public class DesguaceController {
 			
 			//Falta por hacer con base de datos
 			@RequestMapping(value = "/subirProductoEditado")
-			public String subirProductoEditado(Model model,@RequestParam Long idProducto,@RequestParam String litProducto,@RequestParam String direccionpropietario,
-					@RequestParam String nombredesguacepropietario,@RequestParam String id_marca,@RequestParam String contenido,HttpServletRequest request) {
+
+			//public String subirProductoEditado(Model model,@RequestParam Long idProducto,@RequestParam String litProducto,@RequestParam String direccionpropietario,
+					//@RequestParam String nombredesguacepropietario,@RequestParam String id_marca,@RequestParam String contenido,HttpServletRequest request) {
 			
 			//	Comentario comentario = new Comentario (contenido);
+
+			public String subirProductoEditado(Model model,HttpServletRequest request,@RequestParam Long idProducto,@RequestParam String litProducto,@RequestParam String direccionpropietario,
+					@RequestParam String nombredesguacepropietario,@RequestParam String id_marca,@RequestParam String contenido) {
+
 				
 				Producto producto = productoRepository.findByIdProducto(idProducto);
+
 				//Producto producto = productoRepository.findByIdProductoAndUsuario(idProducto,request.getUserPrincipal().getName());
-				Comentario comentario = producto.getComentario();
+				//Comentario comentario = producto.getComentario();
+
+
 				
-				long idComentario = comentario.getIdComentario();
+				if(producto.getComentario() == null) {
+					Comentario comentario = new Comentario (contenido);				
+					comentarioRepository.save(comentario);				
+					productoRepository.updateProducto2(litProducto, direccionpropietario, nombredesguacepropietario, id_marca,comentario,idProducto);
+					
+				}else {
+					long comentario_id_comentario = producto.getComentario().getIdComentario();
+					productoRepository.updateProducto(litProducto, direccionpropietario, nombredesguacepropietario, id_marca, idProducto);
+					comentarioRepository.updateComentario(contenido, comentario_id_comentario);
+				
+				}
 				
 				
-			//	comentarioRepository.save(comentario);
 				
-				productoRepository.updateProducto(litProducto, direccionpropietario, nombredesguacepropietario, id_marca, idProducto);
-				comentarioRepository.updateComentario(contenido, idComentario);
-				
-				
-				
-				String usuario=instanciaDesguace.getUsuario();
-				List<Producto> listaProductos=(List<Producto>) productoRepository.findByUsuario(usuario);
-				model.addAttribute("listaProductos",listaProductos);
+				verMisProducto(model,request);
+			
 				return "verMisProductos";
 			}
 			

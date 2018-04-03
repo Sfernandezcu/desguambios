@@ -8,8 +8,19 @@
 	th
 	{
 		background: orange;
+		text-align: center;
 		height:30px;
+		width:30px;
+		
 	}
+	td
+	{   
+		
+		text-align: center;
+		width:30px;
+	}
+
+	tr:nth-child(even) {background-color: #f2f2f2;}
 	table,th,td
 	{
 		border:2px solid green;
@@ -18,18 +29,32 @@
 	{
 		width:90%;
 		color:black;
-		text-align:center;
+		
 	}
 </style>
+
 <table>
-		{{#listaProductos}}
-   		<tr>
-   			
-        	<td>{{-index}}</td>
-        	<td>{{.}}</td>
-      	</tr>
-      	{{/listaProductos}}	
- </table>
+		<tr>
+ 		<th>ID</th>
+ 		<th>Tipo de Producto</th>
+ 		<th>Direccion del Desguace</th>
+ 		<th>Nombre del Desguace</th>
+ 		<th>Marca Del Producto </th>
+ 		<th>Comentario</th>
+ 		</tr>
+		
+		
+	{{#listaProductos}}
+		<tr>		
+		<td>{{idProducto}}</td>
+		<td>{{litProducto}}</td>
+		<td>{{dirEmpresa}}</td>
+		<td>{{usuario}}</td>
+		<td>{{idMarca}}</td>
+		<td>{{comentario.contenido}}</td>	
+		</tr>
+	{{/listaProductos}}
+	</table>
 </head>
 <body background="fondo3.png" style="background-repeat: no-repeat; ">
 
@@ -37,7 +62,7 @@
 <form action="/subirEliminarEditar" method="post">
 		<input  type="submit" value="Atras">
 		<input type="hidden" name="_csrf" value="{{token}}"/>	
-		</form>
+</form>
 
 </body>
 </html>

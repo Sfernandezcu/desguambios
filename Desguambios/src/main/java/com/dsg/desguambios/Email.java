@@ -18,7 +18,7 @@ public Email(String from, String to, String msg) {
 	this.to = to;
 	this.msg = msg;
 }
-public String getFrom() {
+public String getFrom() {   
 	return from;
 }
 public void setFrom(String from) {
