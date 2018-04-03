@@ -5,6 +5,8 @@ package com.dsg.desguambios.repositorios;
 import java.util.List;
 
 import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -14,13 +16,14 @@ import org.springframework.transaction.annotation.Transactional;
 import com.dsg.desguambios.entidades.Comentario;
 import com.dsg.desguambios.entidades.Producto;
 
+
 @CacheConfig(cacheNames="productos")
 public interface ProductoRepository extends JpaRepository<Producto, Long> {
 	
+	
+	@Cacheable//Guarda en la cache el resultado de esta busqueda(Se usa en favoritos)
 	Producto findByIdProducto (Long idProducto);
 	
-
-	//Producto findByIdProductoAndUsuario(Long idProducto,String usuario);
 	
 	//Producto findByLitProducto (String litProducto);
 	List<Producto> findByLitProductoIgnoreCase(String litProducto);
