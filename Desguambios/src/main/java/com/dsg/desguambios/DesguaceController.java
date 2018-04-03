@@ -103,24 +103,12 @@ public class DesguaceController {
 				return "buscadorEditarProducto";
 			}
 			
-			//Falta por hacer con base de datos
-			@RequestMapping(value = "/subirProductoEditado")
-
-			//public String subirProductoEditado(Model model,@RequestParam Long idProducto,@RequestParam String litProducto,@RequestParam String direccionpropietario,
-					//@RequestParam String nombredesguacepropietario,@RequestParam String id_marca,@RequestParam String contenido,HttpServletRequest request) {
 			
-			//	Comentario comentario = new Comentario (contenido);
-
+			@RequestMapping(value = "/subirProductoEditado")
 			public String subirProductoEditado(Model model,HttpServletRequest request,@RequestParam Long idProducto,@RequestParam String litProducto,@RequestParam String direccionpropietario,
 					@RequestParam String nombredesguacepropietario,@RequestParam String id_marca,@RequestParam String contenido) {
-
 				
 				Producto producto = productoRepository.findByIdProducto(idProducto);
-
-				//Producto producto = productoRepository.findByIdProductoAndUsuario(idProducto,request.getUserPrincipal().getName());
-				//Comentario comentario = producto.getComentario();
-
-
 				
 				if(producto.getComentario() == null) {
 					Comentario comentario = new Comentario (contenido);				
@@ -131,10 +119,7 @@ public class DesguaceController {
 					long comentario_id_comentario = producto.getComentario().getIdComentario();
 					productoRepository.updateProducto(litProducto, direccionpropietario, nombredesguacepropietario, id_marca, idProducto);
 					comentarioRepository.updateComentario(contenido, comentario_id_comentario);
-				
 				}
-				
-				
 				
 				verMisProducto(model,request);
 			
