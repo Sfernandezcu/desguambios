@@ -103,11 +103,12 @@ public class DesguaceController {
 			//Falta por hacer con base de datos
 			@RequestMapping(value = "/subirProductoEditado")
 			public String subirProductoEditado(Model model,@RequestParam Long idProducto,@RequestParam String litProducto,@RequestParam String direccionpropietario,
-					@RequestParam String nombredesguacepropietario,@RequestParam String id_marca,@RequestParam String contenido) {
+					@RequestParam String nombredesguacepropietario,@RequestParam String id_marca,@RequestParam String contenido,HttpServletRequest request) {
 			
 			//	Comentario comentario = new Comentario (contenido);
 				
 				Producto producto = productoRepository.findByIdProducto(idProducto);
+				//Producto producto = productoRepository.findByIdProductoAndUsuario(idProducto,request.getUserPrincipal().getName());
 				Comentario comentario = producto.getComentario();
 				
 				long idComentario = comentario.getIdComentario();
