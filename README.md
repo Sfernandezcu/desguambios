@@ -139,7 +139,12 @@ iptables -A OUTPUT -p tcp -m tcp --dport 8080 -j ACCEPT
 
 11º iniciamos en cada maquina el jar  "java -jar desguambios.jar" y "java -jar desguambiosAPI.jar"
 
+# FASE 4
 
+- INFRAESTRUCTURA
 
+Cada una de ellas estará alojada en una maquina virtual distinta.
+
+![Texto alternativo](https://github.com/di3guez/desguambios/blob/master/Desguambios/src/main/resources/static/ProductosDeUnDesguace.PNG)
 
 
