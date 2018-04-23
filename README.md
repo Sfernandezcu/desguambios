@@ -155,5 +155,5 @@ La caché funciona para los usuarios sin loguearse, guardará sus productos favo
 
 - VIDEO EXPLICATIVO DESGUAMBIOS
 
-[![ ](https://img.youtube.com/watch?v=kT6SStZbCyE&feature=youtu.be)
+https://www.youtube.com/watch?v=kT6SStZbCyE&feature=youtu.be
 
