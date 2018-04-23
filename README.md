@@ -145,6 +145,6 @@ iptables -A OUTPUT -p tcp -m tcp --dport 8080 -j ACCEPT
 
 Cada una de ellas estará alojada en una maquina virtual distinta.
 
-![Texto alternativo](https://github.com/di3guez/desguambios/blob/master/Desguambios/src/main/resources/static/ProductosDeUnDesguace.PNG)
+![Texto alternativo](https://github.com/di3guez/desguambios/blob/master/Desguambios/src/main/resources/static/Captura.PNG)
 
 
