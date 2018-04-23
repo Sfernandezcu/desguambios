@@ -147,4 +147,9 @@ Cada una de ellas estará alojada en una maquina virtual distinta.
 
 ![Texto alternativo](https://github.com/di3guez/desguambios/blob/master/Desguambios/src/main/resources/static/Captura.PNG)
 
+- CACHÉ
+
+La caché funciona para los usuarios sin loguearse, guardará sus productos favoritos. La caché se borra cuando un usuario hace login.
+
+![Texto alternativo](https://github.com/di3guez/desguambios/blob/master/Desguambios/src/main/resources/static/CapturaCach%C3%A9.PNG)
 
