@@ -139,7 +139,21 @@ iptables -A OUTPUT -p tcp -m tcp --dport 8080 -j ACCEPT
 
 11º iniciamos en cada maquina el jar  "java -jar desguambios.jar" y "java -jar desguambiosAPI.jar"
 
+# FASE 4
 
+- INFRAESTRUCTURA
 
+Cada una de ellas estará alojada en una maquina virtual distinta.
 
+![Texto alternativo](https://github.com/di3guez/desguambios/blob/master/Desguambios/src/main/resources/static/Captura.PNG)
+
+- CACHÉ
+
+La caché funciona para los usuarios sin loguearse, guardará sus productos favoritos. La caché se borra cuando un usuario hace login.
+
+![Texto alternativo](https://github.com/di3guez/desguambios/blob/master/Desguambios/src/main/resources/static/CapturaCach%C3%A9.PNG)
+
+- VIDEO EXPLICATIVO DESGUAMBIOS
+
+https://www.youtube.com/watch?v=kT6SStZbCyE&feature=youtu.be
 
