@@ -35,7 +35,7 @@ public class pdfController {
 		}
 		json.put("piezaIds", piezasId);
 		
-		 ObjectNode data = rest.postForObject("http://localhost:8080/pdfCreator",json, ObjectNode.class);
+		 ObjectNode data = rest.postForObject("http://desguambiosPDF:8080/pdfCreator",json, ObjectNode.class);
 
          byte[] bytes = data.get("pdf").binaryValue();
          ByteArrayOutputStream bos = new ByteArrayOutputStream();
