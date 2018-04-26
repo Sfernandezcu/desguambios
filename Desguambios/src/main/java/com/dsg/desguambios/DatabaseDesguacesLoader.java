@@ -26,17 +26,17 @@ public class DatabaseDesguacesLoader {
 	    private void initDatabase() {
 	    	
 	    	Comentario comentario = new Comentario();
-	    	comentario.setContenido("hola que tal");
+	    	comentario.setContenido("Un poco arañado");
 	    	
 	    	Comentario comentario1 = new Comentario();
-	    	comentario1.setContenido("buen estado");
+	    	comentario1.setContenido("Buen estado");
 	    	
 	    	Comentario comentario2 = new Comentario();
-	    	comentario2.setContenido("como nuevo");
+	    	comentario2.setContenido("Como nuevo");
 	    
 	    	
 	    	Comentario comentario4 = new Comentario();
-	    	comentario4.setContenido("sin color");
+	    	comentario4.setContenido("Usado");
 	    	
 	    	
 	    
@@ -49,7 +49,10 @@ public class DatabaseDesguacesLoader {
 			Producto producto_A= new Producto("Retrovisor","Calle epep 123","Pepe","Bmw",comentario);
 			Producto Producto_B= new Producto("Luna","Calle epep 123","Pepe","Mercedes",comentario1);
 			Producto Producto_C= new Producto("Puerta","Calle epep 123","Pepe","Renault",comentario2);
-			Producto Producto_E= new Producto("Luna","Calle siul 123","Luis","Audi",comentario4);
+			Producto Producto_D= new Producto("Luna","Calle siul 123","Luis","Audi",comentario4);
+			//Producto producto_E= new Producto("Rueda","Calle epep 123","Pepe","Bmw",comentario2);
+			//Producto producto_F= new Producto("Retrovisor","Calle epep 123","Pepe","Peugeot",comentario4);
+			//Producto producto_G= new Producto("Rueda","Calle epep 123","Pepe","Peugeot",comentario4);
 			
 			
 			
@@ -58,7 +61,10 @@ public class DatabaseDesguacesLoader {
 			productoRepository.save(producto_A);
 			productoRepository.save(Producto_B);
 			productoRepository.save(Producto_C);
-			productoRepository.save(Producto_E);
+			productoRepository.save(Producto_D);
+			//productoRepository.save(producto_E);
+			//productoRepository.save(producto_F);
+			//productoRepository.save(producto_G);
 	    }
 
 }
